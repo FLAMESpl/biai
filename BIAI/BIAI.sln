@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIAI.Interface", "BIAI.Interface\BIAI.Interface.csproj", "{B1EF1903-CB7E-4317-A80C-8681DDC1EFDC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIAI.Network", "BIAI.Network\BIAI.Network.csproj", "{C7FCC4B9-B0EF-47AE-B0D5-97D77CC1BCF3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B1EF1903-CB7E-4317-A80C-8681DDC1EFDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1EF1903-CB7E-4317-A80C-8681DDC1EFDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1EF1903-CB7E-4317-A80C-8681DDC1EFDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1EF1903-CB7E-4317-A80C-8681DDC1EFDC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7FCC4B9-B0EF-47AE-B0D5-97D77CC1BCF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7FCC4B9-B0EF-47AE-B0D5-97D77CC1BCF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7FCC4B9-B0EF-47AE-B0D5-97D77CC1BCF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7FCC4B9-B0EF-47AE-B0D5-97D77CC1BCF3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
