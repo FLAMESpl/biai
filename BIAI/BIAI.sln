@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIAI.Interface", "BIAI.Inte
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIAI.Network", "BIAI.Network\BIAI.Network.csproj", "{869C7D58-C5EF-45CB-8C63-07B72306D214}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIAI.Tests", "BIAI.Tests\BIAI.Tests.csproj", "{47222E85-E294-4294-9028-CB62CB202C73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{869C7D58-C5EF-45CB-8C63-07B72306D214}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{869C7D58-C5EF-45CB-8C63-07B72306D214}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{869C7D58-C5EF-45CB-8C63-07B72306D214}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47222E85-E294-4294-9028-CB62CB202C73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47222E85-E294-4294-9028-CB62CB202C73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47222E85-E294-4294-9028-CB62CB202C73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47222E85-E294-4294-9028-CB62CB202C73}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
