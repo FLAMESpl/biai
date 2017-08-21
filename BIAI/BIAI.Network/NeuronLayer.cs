@@ -47,19 +47,27 @@ namespace BIAI.Network
             return Neurons.Select(n => n.Value).ToArray();
         }
 
-        public void Train()
+        public void ComputeDelta()
         {
             foreach (var neuron in Neurons)
             {
-                neuron.Train();
+                neuron.ComputeDelta();
             }
         }
 
-        public void Train(double[] expectedValues)
+        public void ComputeDelta(double[] expectedValues)
         {
             for (int i = 0; i < Neurons.Length; i++)
             {
-                Neurons[i].Train(expectedValues[i]);
+                Neurons[i].ComputeDelta(expectedValues[i]);
+            }
+        }
+
+        public void UpdateWeights(double learningRate)
+        {
+            foreach (var neuron in Neurons)
+            {
+                neuron.UpdateWeigths(learningRate);
             }
         }
     }

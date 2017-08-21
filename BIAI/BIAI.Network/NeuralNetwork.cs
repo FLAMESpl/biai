@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace BIAI.Network
@@ -17,24 +18,22 @@ namespace BIAI.Network
             neuronLayers[2] = new NeuronLayer(outputLayerNeuronsCount, hiddenLayer);
         }
 
-        public double[] Process(double[] values)
+        public double[] Predict(double[] values)
         {
             if (values.Length != inputLayer.Neurons.Length)
                 throw new ArgumentException("Number of input values must match number of input neurons.", nameof(values));
 
             inputLayer.InsertValues(values);
-            foreach (var layer in neuronLayers.Skip(1))
-            {
-                layer.Compute();
-            }
+            hiddenLayer.Compute();
+            outputLayer.Compute();
 
             return outputLayer.GetValues();
         }
 
-        public double Train(TrainingDataSet[] trainingDataSets, double trainingDataPercentage)
+        public void Train(IReadOnlyCollection<TrainingDataSet> trainingDataSets, double learningRate, double learningDataPercentage)
         {
-            if (trainingDataPercentage > 1 || trainingDataPercentage < 0)
-                throw new ArgumentException("Percentage of training data must be a value between 0 and 1.", nameof(trainingDataPercentage));
+            if (learningDataPercentage > 1 || learningDataPercentage < 0)
+                throw new ArgumentException("Percentage of training data must be a value between 0 and 1.", nameof(learningDataPercentage));
 
             foreach (var dataSet in trainingDataSets)
             {
@@ -45,22 +44,20 @@ namespace BIAI.Network
                     throw new ArgumentException($"Data set's number of output values ({dataSet.Outputs.Length}) does not match size of output layer ({outputLayer.Neurons.Length})", nameof(trainingDataSets));
             }
 
-            foreach (var dataSet in trainingDataSets)
+            var learningDataCount = (int)Math.Floor(trainingDataSets.Count * learningRate);
+            foreach (var dataSet in trainingDataSets.Skip(learningDataCount))
             {
                 inputLayer.InsertValues(dataSet.Inputs);
-                foreach (var layer in neuronLayers.Skip(1))
-                {
-                    layer.Compute();
-                }
+                hiddenLayer.Compute();
+                outputLayer.Compute();
+                
+                outputLayer.ComputeDelta(dataSet.Outputs);
+                hiddenLayer.ComputeDelta();
+                inputLayer.ComputeDelta();
 
-                outputLayer.Train(dataSet.Outputs);
-                foreach (var layer in neuronLayers.Reverse().Skip(1))
-                {
-                    layer.Train();
-                }
+                hiddenLayer.UpdateWeights(learningRate);
+                outputLayer.UpdateWeights(learningRate);
             }
-
-            return 0;
         }
     }
 }

@@ -25,11 +25,10 @@ namespace BIAI.Network
             {
                 inputsSum += connection.Key.Value * connection.Value;
             }
-
             Value = 1d / (Math.Exp(inputsSum) + 1);
         }
 
-        public void Train()
+        public void ComputeDelta()
         {
             var error = 0d;
             foreach (var output in outputs)
@@ -39,9 +38,20 @@ namespace BIAI.Network
             Delta = error * Value * (1 - Value);
         }
 
-        public void Train(double expectedValue)
+        public void ComputeDelta(double expectedValue)
         {
             Delta = (expectedValue - Value) * Value * (1 - Value);
+        }
+
+        public void UpdateWeigths(double learningRate)
+        {
+            foreach (var activator in activators.Keys)
+            {
+                var weigthDelta = learningRate * Delta * activator.Value;
+                activators[activator] += weigthDelta;
+                activator.outputs[this] += weigthDelta;
+            }
+            Bias += learningRate * Delta;
         }
     }
 }
