@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="40"
-  DTS:VersionGUID="{E5DDB205-50BD-4F2C-AC57-8D66843524E2}">
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{72B518C2-B0D0-49F2-81A1-8B5417FADE44}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1882,68 +1882,6 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[targtype2]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[targtype2]"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[targtype2]"
-                      name="targtype2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[targtype2_txt]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[targtype2_txt]"
-                      length="30"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[targtype2_txt]"
-                      name="targtype2_txt"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[targtype3]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[targtype3]"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[targtype3]"
-                      name="targtype3"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
                       refId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[gname]"
                       codePage="1250"
                       dataType="str"
@@ -2219,258 +2157,6 @@
                       length="41"
                       lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weapsubtype1_txt]"
                       name="weapsubtype1_txt"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weaptype2]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[weaptype2]"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weaptype2]"
-                      name="weaptype2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weaptype2_txt]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[weaptype2_txt]"
-                      length="75"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weaptype2_txt]"
-                      name="weaptype2_txt"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weapsubtype2]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[weapsubtype2]"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weapsubtype2]"
-                      name="weapsubtype2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weapsubtype2_txt]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[weapsubtype2_txt]"
-                      length="41"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weapsubtype2_txt]"
-                      name="weapsubtype2_txt"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weaptype3]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[weaptype3]"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weaptype3]"
-                      name="weaptype3"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weaptype3_txt]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[weaptype3_txt]"
-                      length="25"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weaptype3_txt]"
-                      name="weaptype3_txt"
-                      truncationRowDisposition="RedirectRow">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weapsubtype3]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[weapsubtype3]"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weapsubtype3]"
-                      name="weapsubtype3"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weapsubtype3_txt]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[weapsubtype3_txt]"
-                      length="41"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weapsubtype3_txt]"
-                      name="weapsubtype3_txt"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weaptype4]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[weaptype4]"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weaptype4]"
-                      name="weaptype4"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weaptype4_txt]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[weaptype4_txt]"
-                      length="25"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weaptype4_txt]"
-                      name="weaptype4_txt"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weapsubtype4]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[weapsubtype4]"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weapsubtype4]"
-                      name="weapsubtype4"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weapsubtype4_txt]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[weapsubtype4_txt]"
-                      length="41"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weapsubtype4_txt]"
-                      name="weapsubtype4_txt"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -2954,26 +2640,6 @@
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[INT_MISC]"
-                      dataType="i8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[INT_MISC]"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[INT_MISC]"
-                      name="INT_MISC"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
                       refId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[INT_ANY]"
                       dataType="i8"
                       errorOrTruncationOperation="Conversion"
@@ -2981,28 +2647,6 @@
                       externalMetadataColumnId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[INT_ANY]"
                       lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[INT_ANY]"
                       name="INT_ANY"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the data is in binary format."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[targtype3_txt]"
-                      codePage="1250"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[targtype3_txt]"
-                      length="30"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[targtype3_txt]"
-                      name="targtype3_txt"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -3977,18 +3621,6 @@
                       externalMetadataColumnId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[targsubtype1]"
                       lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[targsubtype1]" />
                     <inputColumn
-                      refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[targtype2]"
-                      cachedDataType="i8"
-                      cachedName="targtype2"
-                      externalMetadataColumnId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[targtype2]"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[targtype2]" />
-                    <inputColumn
-                      refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[targtype3]"
-                      cachedDataType="i8"
-                      cachedName="targtype3"
-                      externalMetadataColumnId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[targtype3]"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[targtype3]" />
-                    <inputColumn
                       refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[gname]"
                       cachedCodepage="1250"
                       cachedDataType="str"
@@ -4056,42 +3688,6 @@
                       cachedName="weapsubtype1"
                       externalMetadataColumnId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[weapsubtype1]"
                       lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weapsubtype1]" />
-                    <inputColumn
-                      refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[weaptype2]"
-                      cachedDataType="i8"
-                      cachedName="weaptype2"
-                      externalMetadataColumnId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[weaptype2]"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weaptype2]" />
-                    <inputColumn
-                      refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[weapsubtype2]"
-                      cachedDataType="i8"
-                      cachedName="weapsubtype2"
-                      externalMetadataColumnId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[weapsubtype2]"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weapsubtype2]" />
-                    <inputColumn
-                      refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[weaptype3]"
-                      cachedDataType="i8"
-                      cachedName="weaptype3"
-                      externalMetadataColumnId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[weaptype3]"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weaptype3]" />
-                    <inputColumn
-                      refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[weapsubtype3]"
-                      cachedDataType="i8"
-                      cachedName="weapsubtype3"
-                      externalMetadataColumnId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[weapsubtype3]"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weapsubtype3]" />
-                    <inputColumn
-                      refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[weaptype4]"
-                      cachedDataType="i8"
-                      cachedName="weaptype4"
-                      externalMetadataColumnId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[weaptype4]"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weaptype4]" />
-                    <inputColumn
-                      refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[weapsubtype4]"
-                      cachedDataType="i8"
-                      cachedName="weapsubtype4"
-                      externalMetadataColumnId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[weapsubtype4]"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[weapsubtype4]" />
                     <inputColumn
                       refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[nkill]"
                       cachedDataType="i8"
@@ -4217,12 +3813,6 @@
                       externalMetadataColumnId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[INT_IDEO]"
                       lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[INT_IDEO]" />
                     <inputColumn
-                      refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[INT_MISC]"
-                      cachedDataType="i8"
-                      cachedName="INT_MISC"
-                      externalMetadataColumnId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[INT_MISC]"
-                      lineageId="Package\Extract Transform Load\Flat File Source.Outputs[Flat File Source Output].Columns[INT_MISC]" />
-                    <inputColumn
                       refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].Columns[INT_ANY]"
                       cachedDataType="i8"
                       cachedName="INT_ANY"
@@ -4336,14 +3926,6 @@
                       dataType="i8"
                       name="targsubtype1" />
                     <externalMetadataColumn
-                      refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[targtype2]"
-                      dataType="i8"
-                      name="targtype2" />
-                    <externalMetadataColumn
-                      refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[targtype3]"
-                      dataType="i8"
-                      name="targtype3" />
-                    <externalMetadataColumn
                       refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[gname]"
                       codePage="1250"
                       dataType="str"
@@ -4389,30 +3971,6 @@
                       refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[weapsubtype1]"
                       dataType="i8"
                       name="weapsubtype1" />
-                    <externalMetadataColumn
-                      refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[weaptype2]"
-                      dataType="i8"
-                      name="weaptype2" />
-                    <externalMetadataColumn
-                      refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[weapsubtype2]"
-                      dataType="i8"
-                      name="weapsubtype2" />
-                    <externalMetadataColumn
-                      refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[weaptype3]"
-                      dataType="i8"
-                      name="weaptype3" />
-                    <externalMetadataColumn
-                      refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[weapsubtype3]"
-                      dataType="i8"
-                      name="weapsubtype3" />
-                    <externalMetadataColumn
-                      refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[weaptype4]"
-                      dataType="i8"
-                      name="weaptype4" />
-                    <externalMetadataColumn
-                      refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[weapsubtype4]"
-                      dataType="i8"
-                      name="weapsubtype4" />
                     <externalMetadataColumn
                       refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[nkill]"
                       dataType="i8"
@@ -4497,10 +4055,6 @@
                       refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[INT_IDEO]"
                       dataType="i8"
                       name="INT_IDEO" />
-                    <externalMetadataColumn
-                      refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[INT_MISC]"
-                      dataType="i8"
-                      name="INT_MISC" />
                     <externalMetadataColumn
                       refId="Package\Extract Transform Load\SQL Server Destination.Inputs[SQL Server Destination Input].ExternalColumns[INT_ANY]"
                       dataType="i8"
@@ -4591,35 +4145,13 @@
           Id="Package\Extract Transform Load\SQL Server Destination"
           TopLeft="337,194" />
         <NodeLayout
-          Size="151,42"
-          Id="Package\Extract Transform Load\Flat File Source"
-          TopLeft="376,59" />
-        <EdgeLayout
-          Id="Package\Extract Transform Load.Paths[Flat File Source Output]"
-          TopLeft="429.333333333333,101">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,93"
-              Start="0,0"
-              End="0,85.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,85.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
           Size="130,42"
           Id="Package\Extract Transform Load\Row Count"
           TopLeft="606,194" />
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Extract Transform Load\Flat File Source"
+          TopLeft="376,59" />
         <EdgeLayout
           Id="Package\Extract Transform Load.Paths[Flat File Source Error Output]"
           TopLeft="475.333333333333,101">
@@ -4654,6 +4186,28 @@
             <mssgm:EdgeLabel
               BoundingBox="25.3382942708334,42.7850589777195,144.990078125,16"
               RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Transform Load.Paths[Flat File Source Output]"
+          TopLeft="429.333333333333,101">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,93"
+              Start="0,0"
+              End="0,85.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,85.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

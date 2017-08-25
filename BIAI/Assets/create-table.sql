@@ -23,8 +23,6 @@ CREATE TABLE [Attacks] (
     [attacktype1] bigint,
     [targtype1] bigint,
     [targsubtype1] bigint,
-    [targtype2] bigint,
-    [targtype3] bigint,
     [gname] varchar(89),
     [guncertain1] bigint,
     [guncertain2] bigint,
@@ -36,12 +34,6 @@ CREATE TABLE [Attacks] (
     [compclaim] bigint,
     [weaptype1] bigint,
     [weapsubtype1] bigint,
-    [weaptype2] bigint,
-    [weapsubtype2] bigint,
-    [weaptype3] bigint,
-    [weapsubtype3] bigint,
-    [weaptype4] bigint,
-    [weapsubtype4] bigint,
     [nkill] bigint,
     [nkillus] bigint,
     [nkillter] bigint,
@@ -64,6 +56,5 @@ CREATE TABLE [Attacks] (
     [dbsource] varchar(40),
     [INT_LOG] bigint,
     [INT_IDEO] bigint,
-    [INT_MISC] bigint,
     [INT_ANY] bigint
 )

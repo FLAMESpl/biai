@@ -1,0 +1,20 @@
+﻿using BIAI.Data.Model;
+using Devtalk.EF.CodeFirst;
+using System.Data.Entity;
+
+namespace BIAI.Data
+{
+    public class GlobalTerrorismContext : DbContext
+    {
+        public DbSet<AttackRecord> AttackRecords { get; set; }
+        public DbSet<Country> Countries { get; set; }
+        public DbSet<Region> Regions { get; set; }
+        public DbSet<TargetType> TargetTypes { get; set; }
+        public DbSet<TargetSubtype> TargetSubtypes { get; set; }
+
+        public GlobalTerrorismContext() : base("GlobalTerrorismContext")
+        {
+            Database.SetInitializer(new DontDropDbJustCreateTablesIfModelChanged<GlobalTerrorismContext>());
+        }
+    }
+}

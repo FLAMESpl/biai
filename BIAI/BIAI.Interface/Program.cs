@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BIAI.Data;
+using BIAI.Data.Model;
+using System;
 using System.Windows.Forms;
 
 namespace BIAI.Interface
@@ -16,6 +15,10 @@ namespace BIAI.Interface
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            using (var db = new GlobalTerrorismContext())
+            {
+                db.Countries.Add(new Country());
+            }
             Application.Run(new Form1());
         }
     }
