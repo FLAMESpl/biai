@@ -11,8 +11,9 @@ namespace BIAI.Data
         public DbSet<Region> Regions { get; set; }
         public DbSet<TargetType> TargetTypes { get; set; }
         public DbSet<TargetSubtype> TargetSubtypes { get; set; }
+        public DbSet<Weapon> Weapons { get; set; }
 
-        public GlobalTerrorismContext() : base("GlobalTerrorismContext")
+        public GlobalTerrorismContext() : base("GlobalTerrorism")
         {
             Database.SetInitializer(new DontDropDbJustCreateTablesIfModelChanged<GlobalTerrorismContext>());
         }

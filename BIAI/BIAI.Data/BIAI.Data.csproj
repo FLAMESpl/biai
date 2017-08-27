@@ -59,9 +59,9 @@
   <ItemGroup>
     <Compile Include="App_Start\DontDropDbJustCreateTablesIfModelChangedStart.cs" />
     <Compile Include="GlobalTerrorismContext.cs" />
-    <Compile Include="Migrations\201708251001577_Initial.cs" />
-    <Compile Include="Migrations\201708251001577_Initial.Designer.cs">
-      <DependentUpon>201708251001577_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201708271142491_Initial.cs" />
+    <Compile Include="Migrations\201708271142491_Initial.Designer.cs">
+      <DependentUpon>201708271142491_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AttackRecord.cs" />
@@ -74,6 +74,7 @@
     <Compile Include="Model\Region.cs" />
     <Compile Include="Model\TargetSubtype.cs" />
     <Compile Include="Model\TargetType.cs" />
+    <Compile Include="Model\Weapon.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -81,8 +82,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201708251001577_Initial.resx">
-      <DependentUpon>201708251001577_Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201708271142491_Initial.resx">
+      <DependentUpon>201708271142491_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

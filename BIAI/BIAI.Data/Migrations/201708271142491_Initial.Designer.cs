@@ -13,7 +13,7 @@ namespace BIAI.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201708251001577_Initial"; }
+            get { return "201708271142491_Initial"; }
         }
         
         string IMigrationMetadata.Source

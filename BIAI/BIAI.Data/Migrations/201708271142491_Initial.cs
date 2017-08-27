@@ -11,39 +11,35 @@ namespace BIAI.Data.Migrations
                 "dbo.AttackRecords",
                 c => new
                     {
-                        Id = c.Long(nullable: false, identity: true),
+                        Id = c.Long(nullable: false),
                         Year = c.Long(nullable: false),
                         Month = c.Long(nullable: false),
                         Day = c.Long(nullable: false),
-                        Extended24Hours = c.Boolean(nullable: false),
-                        Resolution = c.String(),
-                        CountryId = c.Long(nullable: false),
-                        RegionId = c.Long(nullable: false),
-                        City = c.String(),
+                        Extended24Hours = c.Boolean(),
+                        CountryId = c.Long(),
+                        RegionId = c.Long(),
                         Latitude = c.String(),
                         Longitude = c.String(),
-                        Specificity = c.Long(nullable: false),
-                        Vicinity = c.Boolean(nullable: false),
-                        PoliticalEconomicReligiousOrSocialGoal = c.Boolean(nullable: false),
-                        IntentionToCoerceOrIntimidate = c.Boolean(nullable: false),
-                        OutsideInternationalHumanitarianLaw = c.Boolean(nullable: false),
+                        Specificity = c.Long(),
+                        Vicinity = c.Boolean(),
+                        PoliticalEconomicReligiousOrSocialGoal = c.Boolean(),
+                        IntentionToCoerceOrIntimidate = c.Boolean(),
+                        OutsideInternationalHumanitarianLaw = c.Boolean(),
                         TerrorismDoubt = c.Boolean(),
-                        AlternativeCategory = c.Int(nullable: false),
+                        AlternativeCategory = c.Int(),
                         PartOfMultipleIncident = c.Boolean(),
-                        WasSuccessful = c.Boolean(nullable: false),
-                        WasSuicidalAttack = c.Boolean(nullable: false),
+                        WasSuccessful = c.Boolean(),
+                        WasSuicidalAttack = c.Boolean(),
                         AttackType = c.Int(nullable: false),
-                        TargetTypeId = c.Long(nullable: false),
-                        TargetSubTypeId = c.Long(nullable: false),
-                        OrganizationName = c.String(),
-                        OrganizationNameDeduced = c.Boolean(nullable: false),
-                        WasIndividualAttack = c.Boolean(nullable: false),
+                        TargetTypeId = c.Long(),
+                        TargetSubTypeId = c.Long(),
+                        OrganizationNameDeduced = c.Boolean(),
+                        WasIndividualAttack = c.Boolean(),
                         NumberOfAttackers = c.Int(),
-                        ResponsibilityWasClaimed = c.Boolean(nullable: false),
+                        ResponsibilityWasClaimed = c.Boolean(),
                         ClaimMode = c.Int(),
                         WasClaimCompeting = c.Int(),
                         WeaponTypeId = c.Long(),
-                        WeaponSubtypeId = c.Long(),
                         Fatalities = c.Long(nullable: false),
                         USCitizensKilled = c.Long(),
                         TerroristsKilled = c.Long(),
@@ -52,27 +48,22 @@ namespace BIAI.Data.Migrations
                         TerroristsInjured = c.Long(),
                         WasPropertyDamaged = c.Int(),
                         PropertyDamageValueClass = c.Int(),
-                        PropertyDamageValue = c.Long(nullable: false),
+                        PropertyDamageValue = c.Long(),
                         WasHostageKidnapped = c.Int(),
                         NumberOfHostagesKidnapped = c.Int(),
                         NumberOfUSCitizensKidnapped = c.Int(),
-                        HoursThatHostagesWasKidnapped = c.Int(nullable: false),
-                        DaysThatHostagesWasKidnapped = c.Int(nullable: false),
                         WasRansomDemanded = c.Int(),
-                        RansomPaid = c.Long(nullable: false),
-                        RansomPaidByUS = c.Long(nullable: false),
                         HostageKidnappingOutcome = c.Int(),
-                        HostagesSurvived = c.Int(nullable: false),
-                        DatabaseSource = c.String(),
+                        HostagesSurvived = c.Int(),
                         WasLogisticallyInternational = c.Int(),
                         WasIdeologicallyInternational = c.Int(),
                         WasInternational = c.Int(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Countries", t => t.CountryId, cascadeDelete: true)
-                .ForeignKey("dbo.Regions", t => t.RegionId, cascadeDelete: true)
-                .ForeignKey("dbo.TargetSubtypes", t => t.TargetSubTypeId, cascadeDelete: true)
-                .ForeignKey("dbo.TargetTypes", t => t.TargetTypeId, cascadeDelete: true)
+                .ForeignKey("dbo.Countries", t => t.CountryId)
+                .ForeignKey("dbo.Regions", t => t.RegionId)
+                .ForeignKey("dbo.TargetSubtypes", t => t.TargetSubTypeId)
+                .ForeignKey("dbo.TargetTypes", t => t.TargetTypeId)
                 .Index(t => t.CountryId)
                 .Index(t => t.RegionId)
                 .Index(t => t.TargetTypeId)
@@ -82,7 +73,7 @@ namespace BIAI.Data.Migrations
                 "dbo.Countries",
                 c => new
                     {
-                        Id = c.Long(nullable: false, identity: true),
+                        Id = c.Long(nullable: false),
                         Name = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
@@ -91,7 +82,7 @@ namespace BIAI.Data.Migrations
                 "dbo.Regions",
                 c => new
                     {
-                        Id = c.Long(nullable: false, identity: true),
+                        Id = c.Long(nullable: false),
                         Name = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
@@ -100,7 +91,7 @@ namespace BIAI.Data.Migrations
                 "dbo.TargetSubtypes",
                 c => new
                     {
-                        Id = c.Long(nullable: false, identity: true),
+                        Id = c.Long(nullable: false),
                         Name = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
@@ -109,7 +100,16 @@ namespace BIAI.Data.Migrations
                 "dbo.TargetTypes",
                 c => new
                     {
-                        Id = c.Long(nullable: false, identity: true),
+                        Id = c.Long(nullable: false),
+                        Name = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Weapons",
+                c => new
+                    {
+                        Id = c.Long(nullable: false),
                         Name = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
@@ -126,6 +126,7 @@ namespace BIAI.Data.Migrations
             DropIndex("dbo.AttackRecords", new[] { "TargetTypeId" });
             DropIndex("dbo.AttackRecords", new[] { "RegionId" });
             DropIndex("dbo.AttackRecords", new[] { "CountryId" });
+            DropTable("dbo.Weapons");
             DropTable("dbo.TargetTypes");
             DropTable("dbo.TargetSubtypes");
             DropTable("dbo.Regions");
