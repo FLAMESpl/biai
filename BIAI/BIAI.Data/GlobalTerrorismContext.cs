@@ -1,5 +1,4 @@
 ﻿using BIAI.Data.Model;
-using Devtalk.EF.CodeFirst;
 using System.Data.Entity;
 
 namespace BIAI.Data
@@ -15,7 +14,6 @@ namespace BIAI.Data
 
         public GlobalTerrorismContext() : base("GlobalTerrorism")
         {
-            Database.SetInitializer(new DontDropDbJustCreateTablesIfModelChanged<GlobalTerrorismContext>());
         }
     }
 }

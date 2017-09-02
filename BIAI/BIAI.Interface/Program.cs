@@ -15,11 +15,7 @@ namespace BIAI.Interface
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            using (var db = new GlobalTerrorismContext())
-            {
-                db.Countries.Add(new Country());
-            }
-            Application.Run(new Form1());
+            Application.Run(new Form());
         }
     }
 }

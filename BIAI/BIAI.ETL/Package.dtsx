@@ -11,8 +11,8 @@
   DTS:LocaleID="1045"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="76"
-  DTS:VersionGUID="{A9A2DA55-C7C6-41DD-93D1-976B32379DC3}">
+  DTS:VersionBuild="82"
+  DTS:VersionGUID="{936C5299-9A5A-4FE4-899D-73530AF68022}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -31,7 +31,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x0022_"
           DTS:CodePage="1250"
-          DTS:ConnectionString="D:\vs projects\biai\BIAI\Assets\globalterrorismdb_0617dist.csv">
+          DTS:ConnectionString="C:\Users\Łukasz\Documents\Studia\biai\BIAI\Assets\globalterrorismdb_0617dist.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="eventid"
-              DTS:DTSID="{7F8ABC4F-F023-494F-8E82-8AF41CFA88AF}"
+              DTS:DTSID="{BFBBFE5F-31BE-4070-BEC1-28AEA35A95B8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -47,7 +47,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="iyear"
-              DTS:DTSID="{E8206F95-0527-4ECE-A24F-B9DAEE4F9583}"
+              DTS:DTSID="{87391F1E-D242-4961-8A99-B11D85830E88}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -55,7 +55,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="imonth"
-              DTS:DTSID="{1E050474-5E1D-4FF4-A945-732511ADA265}"
+              DTS:DTSID="{59678772-0359-41CB-9B8C-AEB65EE35C42}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -63,7 +63,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="iday"
-              DTS:DTSID="{521D1A15-1ECB-4FEC-A90A-3DB7B92473AD}"
+              DTS:DTSID="{0D681A7F-E91C-4864-AB17-822BFA3613AE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -72,7 +72,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="approxdate"
-              DTS:DTSID="{012DAE60-95FB-474A-82EE-020B2B859DB9}"
+              DTS:DTSID="{41697F94-9CC8-4258-B6D6-D6560082BC41}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -80,7 +80,7 @@
               DTS:DataType="11"
               DTS:TextQualified="True"
               DTS:ObjectName="extended"
-              DTS:DTSID="{CE1E13E0-2DB1-4F70-98A1-2532550F2509}"
+              DTS:DTSID="{E2C798C9-1C1A-4A57-BB4A-725CC764F600}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -88,7 +88,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="resolution"
-              DTS:DTSID="{E03C3A20-E15B-482E-AE94-13BD9493F8AA}"
+              DTS:DTSID="{7F155769-488C-4129-B00F-57CC4BC50890}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -96,7 +96,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="country"
-              DTS:DTSID="{9AA5CE7C-3D7D-4B02-BF01-C8ADE20341E0}"
+              DTS:DTSID="{8D2881B2-3A95-42AF-869B-EBBDB9D913B8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -104,7 +104,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="country_txt"
-              DTS:DTSID="{E35BDAC3-714A-4D2D-A97D-1ED17A10863D}"
+              DTS:DTSID="{B21B87F0-886E-487B-841A-94315629679C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -112,7 +112,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="region"
-              DTS:DTSID="{84070928-E2DB-4F47-BEE9-9170D9BCC40A}"
+              DTS:DTSID="{A191A61C-74AD-4E3F-85C2-3BBE8E7116B8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -120,7 +120,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="region_txt"
-              DTS:DTSID="{17E60C8C-F3D5-4E4D-9B2D-95B4D5094154}"
+              DTS:DTSID="{DD419D8D-508F-45DC-A158-4024A14131A0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -128,7 +128,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="provstate"
-              DTS:DTSID="{59448819-1FCA-4060-BBD7-43FD7A280B99}"
+              DTS:DTSID="{36C45E77-976A-4B5B-AF9C-91C6AFCD5F6C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -136,7 +136,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="city"
-              DTS:DTSID="{68B8A0CA-0A28-46D2-AA4F-791AE19D235E}"
+              DTS:DTSID="{1194705A-050F-4BAD-9F20-3E97EFAC2A6C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -144,7 +144,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="latitude"
-              DTS:DTSID="{0A85F02D-9CE6-419F-88A1-E90E68CDEA80}"
+              DTS:DTSID="{6C409321-EB7B-475D-8916-FB50151DF26E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -152,7 +152,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="longitude"
-              DTS:DTSID="{72BF1BBB-2191-4028-BBAE-3C4212B9E83A}"
+              DTS:DTSID="{E6D58684-0FDF-4006-AE51-470F829C079F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -160,7 +160,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="specificity"
-              DTS:DTSID="{348B9858-C3A9-4BAC-BC57-CD4209B029D4}"
+              DTS:DTSID="{F8DDEF28-3819-473F-9ADA-788D030CF34A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -168,7 +168,7 @@
               DTS:DataType="11"
               DTS:TextQualified="True"
               DTS:ObjectName="vicinity"
-              DTS:DTSID="{55679F38-AE5A-4AF5-AFBF-261E192CAFE7}"
+              DTS:DTSID="{63046FD2-074D-41FC-88C9-A17E84C77ABE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -176,7 +176,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="location"
-              DTS:DTSID="{A47D1300-37EF-4D7D-BC17-5895D444DD9D}"
+              DTS:DTSID="{967B3ACC-B14A-4903-B102-B2B238002095}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -184,7 +184,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="summary"
-              DTS:DTSID="{906D8598-B6D4-4335-BE20-AF423F64120F}"
+              DTS:DTSID="{72A45FE9-88B3-41BF-9DC2-7391BE1A364A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -192,7 +192,7 @@
               DTS:DataType="11"
               DTS:TextQualified="True"
               DTS:ObjectName="crit1"
-              DTS:DTSID="{038C339F-F6CA-45D0-AE8B-B17808F4692A}"
+              DTS:DTSID="{AE3925E9-C6CF-4FAA-ABDE-76A794825C37}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -200,7 +200,7 @@
               DTS:DataType="11"
               DTS:TextQualified="True"
               DTS:ObjectName="crit2"
-              DTS:DTSID="{A1ABD80B-E68B-4B17-98CD-60AE0642B441}"
+              DTS:DTSID="{3845E7E5-DB9A-4DC8-B9A8-FA890FE7190B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -208,7 +208,7 @@
               DTS:DataType="11"
               DTS:TextQualified="True"
               DTS:ObjectName="crit3"
-              DTS:DTSID="{510200A9-9E1F-4A0B-9115-8BD62ECDC357}"
+              DTS:DTSID="{71A6E2BC-24BF-4D69-A829-CF58F2693020}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -216,7 +216,7 @@
               DTS:DataType="11"
               DTS:TextQualified="True"
               DTS:ObjectName="doubtterr"
-              DTS:DTSID="{7E629B6E-46D0-409E-A728-CEE063E2FB55}"
+              DTS:DTSID="{690F3A62-01F8-4A06-8192-850D01F6C147}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -224,7 +224,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="alternative"
-              DTS:DTSID="{D500A2D3-9DA3-4306-A23F-6E3DF296A298}"
+              DTS:DTSID="{C7DB3DCC-62B7-4368-BC00-61B4A362D96E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -232,7 +232,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="alternative_txt"
-              DTS:DTSID="{3FB5CC39-A90F-4AEB-8789-143D2C5D2EBB}"
+              DTS:DTSID="{AA7DC4BF-CB2F-4179-959D-D6A6791FABB8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -240,7 +240,7 @@
               DTS:DataType="11"
               DTS:TextQualified="True"
               DTS:ObjectName="multiple"
-              DTS:DTSID="{EB37D0EB-62B0-43A1-85BA-CBA7BB00AEA5}"
+              DTS:DTSID="{9F789DB0-0D0E-4131-A52C-9C39745EA01C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -248,7 +248,7 @@
               DTS:DataType="11"
               DTS:TextQualified="True"
               DTS:ObjectName="success"
-              DTS:DTSID="{4455FFB7-3CFD-475D-9A21-22B2437CDA62}"
+              DTS:DTSID="{20BA0627-E093-4665-8FBF-D16E1A366FD4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -256,7 +256,7 @@
               DTS:DataType="11"
               DTS:TextQualified="True"
               DTS:ObjectName="suicide"
-              DTS:DTSID="{A7139CE2-01EE-4AE6-91D0-3A68CCC1B6C2}"
+              DTS:DTSID="{C550088E-B4EC-4A19-9099-24F9BCCDEDA5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -264,7 +264,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="attacktype1"
-              DTS:DTSID="{A7B56708-23A9-4DA5-8B10-D86956409013}"
+              DTS:DTSID="{A7650C63-A6DB-4304-A39A-2E51F78355C0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -272,7 +272,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="attacktype1_txt"
-              DTS:DTSID="{2CFC74A0-9ED7-4286-90C1-B62CBDEA5357}"
+              DTS:DTSID="{B1258DAC-95A3-4946-BB59-8440CA59153E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -280,7 +280,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="attacktype2"
-              DTS:DTSID="{EDF5E4EC-A5A3-435E-B941-BA1D7C7F1538}"
+              DTS:DTSID="{D77A619A-59DC-44FF-BBE3-3CD515178366}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -289,7 +289,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="attacktype2_txt"
-              DTS:DTSID="{F50FD8A6-1E1C-41E3-89DD-ED65E9C5C007}"
+              DTS:DTSID="{F425962C-C4FC-456B-83E0-3BE249F80458}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -297,7 +297,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="attacktype3"
-              DTS:DTSID="{7AE7F1A8-D8D4-45BD-93D9-A16C4CE1AD2C}"
+              DTS:DTSID="{54E58FA2-19AF-48AF-B801-D7DA22374102}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -306,7 +306,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="attacktype3_txt"
-              DTS:DTSID="{EC906F7E-1DC3-4649-BBA6-C2F313199D56}"
+              DTS:DTSID="{2B6D2EB5-56F4-4209-9820-2689F96F9C29}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -314,7 +314,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="targtype1"
-              DTS:DTSID="{7C5EF12B-507D-4B28-ACC8-49CABFBA3DA9}"
+              DTS:DTSID="{10AFCE0E-0DF5-46C7-8291-79D6B31DFC43}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -322,7 +322,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="targtype1_txt"
-              DTS:DTSID="{DD1F7AD0-3B93-4469-BF8E-6A5DA2A4A767}"
+              DTS:DTSID="{914BD49E-7592-4DA1-925F-D6662F3E056C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -330,7 +330,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="targsubtype1"
-              DTS:DTSID="{4B17E9AE-FDE6-4981-B3A8-67A9ABBBEBB4}"
+              DTS:DTSID="{B715D3DC-F1F7-4475-B55B-230EE316C695}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -338,7 +338,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="targsubtype1_txt"
-              DTS:DTSID="{E3D0789D-9663-49CF-A66C-6CAB9B530119}"
+              DTS:DTSID="{F6EB2407-7E3D-4B75-B87E-587972030F36}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -346,7 +346,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="corp1"
-              DTS:DTSID="{0F77D332-BE3D-4CE3-BC5F-5CF442C23DD7}"
+              DTS:DTSID="{4F583175-9BB3-4667-9A3E-156E1D51038E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -355,7 +355,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="target1"
-              DTS:DTSID="{80F51830-6DE7-4718-BB90-FE1D3AB080F3}"
+              DTS:DTSID="{C4286D42-0EC6-448E-9AF5-DFEE427DBD16}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -363,7 +363,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="natlty1"
-              DTS:DTSID="{661DC066-F839-4C63-95FD-DD9E733B2446}"
+              DTS:DTSID="{08CD3453-244F-4F1D-94A1-B53A5F9B0C01}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -371,7 +371,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="natlty1_txt"
-              DTS:DTSID="{C9FA17D3-2057-4363-A9F1-580AA33AA7CF}"
+              DTS:DTSID="{E90D3DD5-062D-481F-935D-AE841BADFD12}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -379,7 +379,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="targtype2"
-              DTS:DTSID="{944F4A43-9F3F-4988-B31B-FBDC9A236A70}"
+              DTS:DTSID="{06FFA64E-5D1F-4B36-B1DB-7ABAFC1614A4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -388,7 +388,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="targtype2_txt"
-              DTS:DTSID="{4EF8CEFE-58D7-4C6A-BB31-457170CB25C9}"
+              DTS:DTSID="{14F1493A-F693-43EB-9120-1EFD58B7868F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -396,7 +396,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="targsubtype2"
-              DTS:DTSID="{DE7C5F1A-90B2-425F-ADF8-0C544FF197A3}"
+              DTS:DTSID="{DA913596-C190-4B25-985B-0E9DB0BBC81D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -405,7 +405,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="targsubtype2_txt"
-              DTS:DTSID="{D2A71F4D-07F4-46D9-9302-E0814F79C2BF}"
+              DTS:DTSID="{9F4587E8-96C0-49F2-8B81-BB41AFA42107}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -414,7 +414,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="corp2"
-              DTS:DTSID="{D0B56BF0-30A3-4918-8CE2-C5636213EBB1}"
+              DTS:DTSID="{6F4B52CA-A1B5-484F-B9B9-BB9DD66F84B3}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -423,7 +423,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="target2"
-              DTS:DTSID="{DF7AA63F-9C5A-4CAD-811F-411599178290}"
+              DTS:DTSID="{4164DBE5-CC35-482F-AE59-5ACBC0C77E31}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -431,7 +431,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="natlty2"
-              DTS:DTSID="{26679A0F-C0E4-4194-BBD4-C63A0633B17F}"
+              DTS:DTSID="{B96D2C4B-91E4-4FCC-A11D-97C8DE32B9D1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -440,7 +440,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="natlty2_txt"
-              DTS:DTSID="{15C3F9AB-8527-4E90-A921-1044561B5116}"
+              DTS:DTSID="{CE875C44-01C5-45E3-AB81-ADDFBE01C00C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -448,7 +448,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="targtype3"
-              DTS:DTSID="{BE4AD03E-F8E5-45A6-8582-04F65E0AEA2C}"
+              DTS:DTSID="{7BF92629-1D48-4A1B-A880-D0BBC02DAD3D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -457,7 +457,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="targtype3_txt"
-              DTS:DTSID="{3D69DB30-F560-4B19-9EFE-8DAA2CD3D93F}"
+              DTS:DTSID="{9793515B-DA38-4A20-A397-E579DF0B5953}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -465,7 +465,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="targsubtype3"
-              DTS:DTSID="{57D855A2-AF15-4973-A2CB-87EAD1C29897}"
+              DTS:DTSID="{7842C195-B67B-4572-819F-4F7077FEF369}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -474,7 +474,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="targsubtype3_txt"
-              DTS:DTSID="{4CF3A023-0A19-4613-93A7-7E8287D5AEBF}"
+              DTS:DTSID="{979B6686-A651-4A8F-A55E-9D39BB4A5779}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -483,7 +483,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="corp3"
-              DTS:DTSID="{A221BC68-8D44-46D9-8197-3CFA7241C638}"
+              DTS:DTSID="{38658C9E-361D-454E-8AED-D256A3D8213F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -492,7 +492,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="target3"
-              DTS:DTSID="{F64BBB98-A9C9-48DA-9E41-A00C1444F051}"
+              DTS:DTSID="{98641E46-EF86-4DE6-A617-FC815DE569EC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -500,7 +500,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="natlty3"
-              DTS:DTSID="{043042BE-06AC-48F6-8ACC-0C063B5CA087}"
+              DTS:DTSID="{EA0E2700-FB59-49E9-8D0C-D4D33E0BD8F1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -509,7 +509,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="natlty3_txt"
-              DTS:DTSID="{BC6833CE-DE81-487D-BE0E-C90EF604C10D}"
+              DTS:DTSID="{F316D6DD-15A2-40B7-85C7-877D31B0A5DD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -517,7 +517,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="gname"
-              DTS:DTSID="{9910E503-8F36-4C02-AD2A-BD6059EC6288}"
+              DTS:DTSID="{0E03D339-2569-4B97-94CC-0E818A18CB3F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -526,7 +526,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gsubname"
-              DTS:DTSID="{41099235-993E-43C2-96EB-ED6C41F57DC0}"
+              DTS:DTSID="{C91B04B3-93B4-4C8E-AF3E-EE1ABDACB5F7}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -535,7 +535,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gname2"
-              DTS:DTSID="{15C620AA-592F-4FC3-8064-C10AA14EBA06}"
+              DTS:DTSID="{8D5D8D5F-8E06-4779-AF3F-7E97E8921956}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -543,7 +543,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gsubname2"
-              DTS:DTSID="{27499FA8-5D3B-40D3-AA14-95AE5903EA26}"
+              DTS:DTSID="{C155D570-9BEB-4189-942A-53D493C6DC0E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -552,7 +552,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gname3"
-              DTS:DTSID="{72121FAE-29F4-4223-B786-42803DE988A4}"
+              DTS:DTSID="{076D938F-B3A1-4A5F-866D-9E20751860FB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -560,7 +560,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="gsubname3"
-              DTS:DTSID="{AC896BC0-7005-4C6D-839A-9ABCC357B4F4}"
+              DTS:DTSID="{F07B4C62-2433-43A9-9286-C2CE59FCC6CB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -569,7 +569,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="motive"
-              DTS:DTSID="{D112D3F0-95EE-42D6-8948-28B78111901A}"
+              DTS:DTSID="{1AC09AFE-D0A3-4C9B-8CA5-E3794AF60C1D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -577,7 +577,7 @@
               DTS:DataType="11"
               DTS:TextQualified="True"
               DTS:ObjectName="guncertain1"
-              DTS:DTSID="{A0D654AA-DAE2-471B-86CC-472D438D5C61}"
+              DTS:DTSID="{BDFDC221-FD85-4526-B627-A85059688215}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -585,7 +585,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="guncertain2"
-              DTS:DTSID="{772A3D9A-022C-43BF-B5AC-A71AC9A606D0}"
+              DTS:DTSID="{EAAED8F0-AE72-4DC0-8184-835BE4E2EBD2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -593,7 +593,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="guncertain3"
-              DTS:DTSID="{82853E64-A1EA-4064-94E9-940F088CEF3F}"
+              DTS:DTSID="{F85757E7-C564-40B9-9E6C-A27F9A5B3347}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -601,7 +601,7 @@
               DTS:DataType="11"
               DTS:TextQualified="True"
               DTS:ObjectName="individual"
-              DTS:DTSID="{80E2562C-BC25-46D1-831A-7A47B5A691A8}"
+              DTS:DTSID="{2C276451-36FA-4AEC-B896-BB1774AAABE2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -609,7 +609,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="nperps"
-              DTS:DTSID="{72AFEB91-DABC-4C19-8F1A-79AF883A9787}"
+              DTS:DTSID="{C39B6FC8-73BA-4509-87A9-3830F47405C5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -617,7 +617,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="nperpcap"
-              DTS:DTSID="{81707C88-DBB4-4DC5-A2B6-330106AF7408}"
+              DTS:DTSID="{BB88F6F5-3A29-4799-8841-6964CEA3CE05}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -625,7 +625,7 @@
               DTS:DataType="11"
               DTS:TextQualified="True"
               DTS:ObjectName="claimed"
-              DTS:DTSID="{FE8AF27C-B5E6-4571-BFEF-CA4DDFB468B7}"
+              DTS:DTSID="{6BADDF95-F224-416F-AB7E-1ADB94AF9E63}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -633,7 +633,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="claimmode"
-              DTS:DTSID="{DE237B84-AA3E-4B37-8492-D785F3EF2EE2}"
+              DTS:DTSID="{34FBA78C-9183-4F0E-9DBD-C920B92573C4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -641,7 +641,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="claimmode_txt"
-              DTS:DTSID="{7DCE4F46-3BA6-4E7A-9CD5-7FEA08996632}"
+              DTS:DTSID="{F764B5E2-3CB3-45FE-95A4-623F00942A77}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -649,7 +649,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="claim2"
-              DTS:DTSID="{A9C23E63-61BA-4A0F-B1E4-99E4756B180F}"
+              DTS:DTSID="{2AF3BF2D-8396-4B27-B498-2C3B65820D47}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -657,7 +657,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="claimmode2"
-              DTS:DTSID="{95054FF6-443F-4D01-A0C9-84FB7A1B5E1E}"
+              DTS:DTSID="{819408D9-5CE4-4E4C-B45F-AB712E2C9D04}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -666,7 +666,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="claimmode2_txt"
-              DTS:DTSID="{9D17B011-BB44-42BD-8173-663427329D9A}"
+              DTS:DTSID="{5AC65E76-02DF-45A7-83B8-8688A85B73E9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -674,7 +674,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="claim3"
-              DTS:DTSID="{000E72AE-6F5A-4F67-AD12-2CF6A9AC3BA0}"
+              DTS:DTSID="{F9CCA53E-F699-4C86-BE3D-FD7F41669B39}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -682,7 +682,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="claimmode3"
-              DTS:DTSID="{F3032ABE-BBE7-46BB-BBFF-271ABED65F39}"
+              DTS:DTSID="{63278A5C-4622-44F9-8BC2-CAAE9210BADE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -691,7 +691,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="claimmode3_txt"
-              DTS:DTSID="{518623C9-5E26-4F4E-A381-A4BF2ECF7837}"
+              DTS:DTSID="{BC9ABADB-1D52-4693-8B32-88D496E6C425}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -699,7 +699,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="compclaim"
-              DTS:DTSID="{B3633C4D-ACC3-4447-B98F-05B8C820A471}"
+              DTS:DTSID="{F44BD9FD-77B9-4226-A45B-8A6815EBDA3C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -707,7 +707,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="weaptype1"
-              DTS:DTSID="{37398877-2D55-4EA7-8FEF-FABCD5A52AA6}"
+              DTS:DTSID="{8E9A317C-3914-4832-B29A-C1D042B24520}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -715,7 +715,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="weaptype1_txt"
-              DTS:DTSID="{DF6A5BA0-5565-4311-B5B3-E0F242A8F732}"
+              DTS:DTSID="{A369E3A7-4641-41A5-841C-F014A55BA1D4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -723,7 +723,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="weapsubtype1"
-              DTS:DTSID="{75E7DAC3-25BA-4C30-A22E-9C5EEE6A1D36}"
+              DTS:DTSID="{EC497904-3BD6-4A63-9457-FB015F2B1B4E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -732,7 +732,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="weapsubtype1_txt"
-              DTS:DTSID="{C3E8CEE9-9CEE-4D61-AB97-4962D309442F}"
+              DTS:DTSID="{038C19CD-FA42-442A-8109-AAA20FBF8C2A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -740,7 +740,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="weaptype2"
-              DTS:DTSID="{9DB2704D-B8A4-432C-A2E2-EC69A60AB0C8}"
+              DTS:DTSID="{B8723C5B-BF56-4B81-A71D-5C12709BC9AE}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -749,7 +749,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="weaptype2_txt"
-              DTS:DTSID="{E8696791-4D8E-490C-BED1-57DD2B4EBBEC}"
+              DTS:DTSID="{61FCAC39-25EC-46BC-8BE4-E2A792804E1D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -757,7 +757,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="weapsubtype2"
-              DTS:DTSID="{AAEBF28F-D4DF-44AE-8C04-6A9D7085C991}"
+              DTS:DTSID="{196BAA8A-8E0F-4CBF-9C6F-7554A701108F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -766,7 +766,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="weapsubtype2_txt"
-              DTS:DTSID="{98CA4E91-5D45-49AD-8B35-A82DDC2EF184}"
+              DTS:DTSID="{D011262E-C11E-44BA-8912-EA2512A058DF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -774,7 +774,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="weaptype3"
-              DTS:DTSID="{350C2FC5-642F-4498-9947-2C73F2F32249}"
+              DTS:DTSID="{BF1A1E88-CFF7-4F06-B03B-60C8FD623236}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -783,7 +783,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="weaptype3_txt"
-              DTS:DTSID="{5644E647-A1F4-4F97-A833-4764A7FA77BA}"
+              DTS:DTSID="{E593EE65-EDCB-4C53-8C0C-354460FF5AA0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -791,7 +791,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="weapsubtype3"
-              DTS:DTSID="{23923FA4-5DBC-4E23-BC69-AEC12D88761B}"
+              DTS:DTSID="{AA768B18-959F-437D-8D84-DFCF2326665D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -800,7 +800,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="weapsubtype3_txt"
-              DTS:DTSID="{AFF507E7-90BC-4FBD-9F1C-563E733C0519}"
+              DTS:DTSID="{AF1BAAF6-8129-41DF-9EFC-7446C3D50E07}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -808,7 +808,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="weaptype4"
-              DTS:DTSID="{A1522787-D994-4659-A366-11E2F1FDC66E}"
+              DTS:DTSID="{7F328800-180E-4A8B-A96A-EEC2FC7A8C35}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -817,7 +817,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="weaptype4_txt"
-              DTS:DTSID="{EE945824-A456-4398-80F0-2F08E56AC385}"
+              DTS:DTSID="{43D8C9D5-F89D-4E5A-A580-3066CCF64703}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -825,7 +825,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="weapsubtype4"
-              DTS:DTSID="{8B18851F-B1DD-4876-BE06-F1D433711258}"
+              DTS:DTSID="{FC6214E6-EFD3-454D-AB06-C57EE2881055}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -834,7 +834,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="weapsubtype4_txt"
-              DTS:DTSID="{5A7DF2FE-57A9-4AF6-9E01-B11056791BE9}"
+              DTS:DTSID="{7FDB7E67-268D-4CDB-8561-D5B09CD66F58}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -843,7 +843,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="weapdetail"
-              DTS:DTSID="{8B39E35D-3A87-4A77-B58D-A64317AE30E8}"
+              DTS:DTSID="{A44F6DD8-69FF-431A-A4AB-1A0A084D783D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -851,7 +851,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="nkill"
-              DTS:DTSID="{F9969AA9-B2C1-48A1-B7C9-8D66A267960B}"
+              DTS:DTSID="{0B71FE06-88FF-4738-A0BE-AAFC90718F22}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -859,7 +859,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="nkillus"
-              DTS:DTSID="{DADB21C9-DBCD-403E-9846-6E047AA7CB49}"
+              DTS:DTSID="{186EDAF6-85A3-46A8-AEA6-5C45A2597CF0}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -867,7 +867,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="nkillter"
-              DTS:DTSID="{552C28A1-2227-4088-A8E3-7914652A3C0A}"
+              DTS:DTSID="{28F6E517-D47B-429D-A3F1-2286DA9E2E61}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -875,7 +875,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="nwound"
-              DTS:DTSID="{E7BF6041-21AE-4A24-BBDF-784159E61A32}"
+              DTS:DTSID="{4869F6D8-CC38-40EF-B0AD-4DD0B1983E1C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -883,7 +883,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="nwoundus"
-              DTS:DTSID="{F893AA47-A6A4-47EB-BE09-E2BCF6F33CC6}"
+              DTS:DTSID="{CF8FB2D3-BE82-44AD-8B42-012F89C6DC96}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -891,7 +891,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="nwoundte"
-              DTS:DTSID="{93ADE2EC-8892-40DE-AB74-48B02B4B8D5E}"
+              DTS:DTSID="{44E983C7-64C6-4437-BA63-8849F18C6C11}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -899,7 +899,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="property"
-              DTS:DTSID="{8C502D93-BC0A-42BE-99D0-5941B99A62FD}"
+              DTS:DTSID="{EF00095E-8128-488B-9013-FF9A67D2D47C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -907,7 +907,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="propextent"
-              DTS:DTSID="{FCE5041D-04CF-40C6-BA4E-58CB68F4A0BE}"
+              DTS:DTSID="{FC2102EA-C875-455B-9E7E-F2BAD60464B5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -916,7 +916,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="propextent_txt"
-              DTS:DTSID="{A712E1BE-B7C8-44F5-BA48-09E4A01C7593}"
+              DTS:DTSID="{0C608F5B-29E4-4061-A3C3-49A056D22D41}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -924,7 +924,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="propvalue"
-              DTS:DTSID="{FEF51441-63D3-49CE-B656-2658FA5D602C}"
+              DTS:DTSID="{DB34847D-526B-4BA7-A561-14A57A9D5D4B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -933,7 +933,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="propcomment"
-              DTS:DTSID="{B3D460D5-A092-4732-BB5E-F98FE7702839}"
+              DTS:DTSID="{943E2183-0B39-4FE5-B49F-64FD8B9B25BF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -941,7 +941,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ishostkid"
-              DTS:DTSID="{B69C808C-6C6E-410C-9AA5-27B96EC9DE7B}"
+              DTS:DTSID="{793A8FA1-C658-48BD-92B7-6905BE023C17}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -949,7 +949,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="nhostkid"
-              DTS:DTSID="{E0CFCED3-D452-44BE-829E-24141026C4EF}"
+              DTS:DTSID="{477CAB64-80F8-459A-AE6F-6F6FBB781CC1}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -957,7 +957,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="nhostkidus"
-              DTS:DTSID="{664A6D87-0A88-4331-B1DE-D3A5BCAC4E06}"
+              DTS:DTSID="{4AEDAAFD-C0CB-41E4-A8D5-7EAC35CFFAA8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -965,7 +965,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="nhours"
-              DTS:DTSID="{61AC7456-F82D-49AC-9F66-32F6A514B59B}"
+              DTS:DTSID="{E6B803C9-2C1A-4B5E-9D62-3E437FD2A97A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -973,7 +973,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ndays"
-              DTS:DTSID="{44CD2377-82DA-4704-850E-6A9F6EC43FE2}"
+              DTS:DTSID="{155D3A70-CBA6-48F9-AC50-BF68F859C545}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -982,7 +982,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="divert"
-              DTS:DTSID="{762D0321-E737-47D7-99E2-71D6988AAEBA}"
+              DTS:DTSID="{D758DDE6-1C7D-4BA0-AB5F-900B018A226C}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -991,7 +991,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="kidhijcountry"
-              DTS:DTSID="{72319C6E-3A5F-4925-B6AC-CE96EFC9F343}"
+              DTS:DTSID="{6F141CF9-1126-4866-9F66-8F25C7CC01EF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -999,7 +999,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ransom"
-              DTS:DTSID="{BE01FD46-44CA-45F0-AFB4-0775B767C701}"
+              DTS:DTSID="{67430850-4E9D-4695-AE4E-3549CA1A3528}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1007,7 +1007,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="ransomamt"
-              DTS:DTSID="{D0787C1D-B655-4174-A044-4023B8BEEFB8}"
+              DTS:DTSID="{5DAF26E9-C9CB-4590-A38D-57170F306CEC}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1015,7 +1015,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="ransomamtus"
-              DTS:DTSID="{FC7AC416-B1A9-46F9-BA08-E6CFFC328867}"
+              DTS:DTSID="{49807AA9-7E99-452E-8E93-E074DD4C4E93}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1023,7 +1023,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="ransompaid"
-              DTS:DTSID="{3273522E-3525-4EA7-9F8B-0ABCDBD5784C}"
+              DTS:DTSID="{D38FCE3E-B24F-4521-9F46-F706A55F5A89}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1031,7 +1031,7 @@
               DTS:DataType="20"
               DTS:TextQualified="True"
               DTS:ObjectName="ransompaidus"
-              DTS:DTSID="{BC69441B-D143-4F74-9319-0E3744F2AA25}"
+              DTS:DTSID="{2A7E7320-5D9E-40D7-A941-73EDAF799AF9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1040,7 +1040,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ransomnote"
-              DTS:DTSID="{873B1C13-3D0B-497D-9618-F1618370183B}"
+              DTS:DTSID="{D363E326-3A68-42EE-9FE9-C7379D4A2092}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1048,7 +1048,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="hostkidoutcome"
-              DTS:DTSID="{5C49BFDA-1687-4C87-BB55-77470B7B0177}"
+              DTS:DTSID="{BFC7FF91-AC04-4030-81DC-A4619650F041}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1057,7 +1057,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="hostkidoutcome_txt"
-              DTS:DTSID="{4365E0C6-5749-497A-84D6-E885D2CBE66C}"
+              DTS:DTSID="{D4C9E4BF-8153-4754-8B16-5B0B8975ED17}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1065,7 +1065,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="nreleased"
-              DTS:DTSID="{7D2A05BD-FFFD-4B8E-9A64-7E817426F9D2}"
+              DTS:DTSID="{09E33457-19C2-4636-BF6C-89D6F9479C1F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1074,7 +1074,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="addnotes"
-              DTS:DTSID="{669D9814-8558-4A84-A546-C04CA9FB2027}"
+              DTS:DTSID="{62C844F1-1797-4CE7-B32E-E6E185062CA5}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1082,7 +1082,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="scite1"
-              DTS:DTSID="{5F5B1CFC-17C1-461C-B5C7-DC6BE41A4313}"
+              DTS:DTSID="{D557F653-D9EE-42CD-A056-0F209B21E8AF}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1091,7 +1091,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="scite2"
-              DTS:DTSID="{CEA79EAA-9717-47D0-8045-53068CA32A72}"
+              DTS:DTSID="{B2A31B3D-89E9-416D-8B30-84780BEF2284}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1100,7 +1100,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="scite3"
-              DTS:DTSID="{3B0C2916-5FDC-4913-AE56-E27BBCB1C785}"
+              DTS:DTSID="{1252B0A4-D466-4D67-9BE9-CE6C0A4574C2}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1108,7 +1108,7 @@
               DTS:DataType="302"
               DTS:TextQualified="True"
               DTS:ObjectName="dbsource"
-              DTS:DTSID="{1FB9AD4E-B25E-4104-B09B-087C39F88FDA}"
+              DTS:DTSID="{D753F9DF-726B-49BE-B67D-FD3CE6E47B4E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1116,7 +1116,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="INT_LOG"
-              DTS:DTSID="{5B95650A-4E46-4306-B3F2-C57ED6E1397F}"
+              DTS:DTSID="{34E6BF8C-956F-4A16-83F1-1E4B4387DC86}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1124,7 +1124,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="INT_IDEO"
-              DTS:DTSID="{99B43B6C-DB3A-4344-A9E2-7D01A6A59550}"
+              DTS:DTSID="{DB6E689E-B9C5-4775-8C2A-0C7B11431D93}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1132,7 +1132,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="INT_MISC"
-              DTS:DTSID="{1753B70F-D1DB-44F0-AAAF-D4F57C70902E}"
+              DTS:DTSID="{D70914B1-581A-4561-B6E6-B944ED8BBCA9}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1140,7 +1140,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="INT_ANY"
-              DTS:DTSID="{89B579D9-419F-4B0B-893F-775034293848}"
+              DTS:DTSID="{79A657B9-C2B7-4ED5-9878-8A0BF1F38D1B}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -1149,7 +1149,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="related"
-              DTS:DTSID="{9550407D-F861-4456-B6B4-853D6BFA353B}"
+              DTS:DTSID="{1F666CD0-5F8C-406F-A066-E82911858B28}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -6408,6 +6408,10 @@
           Id="Package\Extract Attacks Records\Flat File Source"
           TopLeft="360,14" />
         <NodeLayout
+          Size="127,42"
+          Id="Package\Extract Attacks Records\Erroneous"
+          TopLeft="654,15" />
+        <NodeLayout
           Size="131,42"
           Id="Package\Extract Attacks Records\To unicode"
           TopLeft="367,249" />
@@ -6415,28 +6419,6 @@
           Size="170,42"
           Id="Package\Extract Attacks Records\Count null fatalities"
           TopLeft="649,161" />
-        <EdgeLayout
-          Id="Package\Extract Attacks Records.Paths[Data Conversion Output]"
-          TopLeft="430.25,291">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34"
-              Start="0,0"
-              End="0,26.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="168,42"
           Id="Package\Extract Attacks Records\If fatalities are null"
@@ -6460,30 +6442,32 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Extract Attacks Records.Paths[Fatalities are not null]"
-          TopLeft="430.25,201">
+          Id="Package\Extract Attacks Records.Paths[Flat File Source Error Output]"
+          TopLeft="511,35.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48"
+              EndConnector="143,0"
               Start="0,0"
-              End="0,40.5">
+              End="135.5,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.5" />
+                    End="135.5,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-46.57212890625,15.37548828125,93.1442578125,9.7490234375"
+              BoundingBox="4.12361328125001,5,127.2527734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6511,31 +6495,51 @@
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="127,42"
-          Id="Package\Extract Attacks Records\Erroneous"
-          TopLeft="654,15" />
         <EdgeLayout
-          Id="Package\Extract Attacks Records.Paths[Flat File Source Error Output]"
-          TopLeft="511,35.5">
+          Id="Package\Extract Attacks Records.Paths[Fatalities are not null]"
+          TopLeft="430.25,201">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="143,0"
+              EndConnector="0,48"
               Start="0,0"
-              End="135.5,0">
+              End="0,40.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="135.5,0" />
+                    End="0,40.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="4.12361328125001,5,127.2527734375,11.609375"
+              BoundingBox="-46.57212890625,15.37548828125,93.1442578125,9.7490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Attacks Records.Paths[Data Conversion Output]"
+          TopLeft="430.25,291">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -6556,107 +6560,243 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="125,42"
+          Id="Package\Extract Dictionaries\Weapons"
+          TopLeft="784,254" />
+        <NodeLayout
+          Size="163,42"
+          Id="Package\Extract Dictionaries\Weapons Unicode"
+          TopLeft="785,320" />
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Extract Dictionaries\TargetSubtypes SQL"
+          TopLeft="590,400" />
+        <NodeLayout
+          Size="155,42"
+          Id="Package\Extract Dictionaries\TargetSubtypes"
+          TopLeft="599,251" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Extract Dictionaries\TargetTypes"
+          TopLeft="402,248" />
+        <NodeLayout
+          Size="179,42"
+          Id="Package\Extract Dictionaries\TargetTypes Unicode"
+          TopLeft="393,321" />
+        <NodeLayout
+          Size="138,42"
+          Id="Package\Extract Dictionaries\Regions SQL"
+          TopLeft="233,398" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Extract Dictionaries\Countries SQL"
+          TopLeft="43,394" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Extract Dictionaries\TargetSubtypes Unicode"
+          TopLeft="583,321" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Extract Dictionaries\Weapons SQL"
+          TopLeft="784,400" />
+        <NodeLayout
           Size="151,42"
           Id="Package\Extract Dictionaries\Flat File Source"
           TopLeft="357,51" />
-        <NodeLayout
-          Size="120,42"
-          Id="Package\Extract Dictionaries\Multicast"
-          TopLeft="368,136" />
-        <EdgeLayout
-          Id="Package\Extract Dictionaries.Paths[Flat File Source Output]"
-          TopLeft="430.25,93">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,43"
-              Start="0,0"
-              End="0,35.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,35.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="123,42"
-          Id="Package\Extract Dictionaries\Countries"
-          TopLeft="58,248" />
-        <EdgeLayout
-          Id="Package\Extract Dictionaries.Paths[Multicast Output 1]"
-          TopLeft="390.666666666667,178">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-271.166666666667,70"
-              Start="0,0"
-              End="-271.166666666667,62.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.1935483870968" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.1935483870968"
-                    Point2="0,19.1935483870968"
-                    Point3="-4,19.1935483870968" />
-                  <mssgle:LineSegment
-                    End="-267.166666666667,19.1935483870968" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-267.166666666667,19.1935483870968"
-                    Point2="-271.166666666667,19.1935483870968"
-                    Point3="-271.166666666667,23.1935483870968" />
-                  <mssgle:LineSegment
-                    End="-271.166666666667,62.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="116,42"
           Id="Package\Extract Dictionaries\Regions"
           TopLeft="251,248" />
         <NodeLayout
-          Size="138,42"
-          Id="Package\Extract Dictionaries\TargetTypes"
-          TopLeft="402,248" />
+          Size="157,42"
+          Id="Package\Extract Dictionaries\Regions Unicode"
+          TopLeft="224,320" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Extract Dictionaries\TargetTypes SQL"
+          TopLeft="403,399" />
+        <NodeLayout
+          Size="123,42"
+          Id="Package\Extract Dictionaries\Countries"
+          TopLeft="58,248" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Extract Dictionaries\Countries Unicode"
+          TopLeft="32,318" />
+        <NodeLayout
+          Size="120,42"
+          Id="Package\Extract Dictionaries\Multicast"
+          TopLeft="368,136" />
         <EdgeLayout
-          Id="Package\Extract Dictionaries.Paths[Multicast Output 2]"
-          TopLeft="409.333333333333,178">
+          Id="Package\Extract Dictionaries.Paths[Sort Output4]"
+          TopLeft="846,296">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-100.333333333333,70"
+              EndConnector="0,24"
               Start="0,0"
-              End="-100.333333333333,62.5">
+              End="0,16.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5526315789474" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,24.5526315789474"
-                    Point2="0,28.5526315789474"
-                    Point3="-4,28.5526315789474" />
+                    End="0,16.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Dictionaries.Paths[Sort Output3]"
+          TopLeft="678.25,293">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-96.3333333333333,28.5526315789474" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-96.3333333333333,28.5526315789474"
-                    Point2="-100.333333333333,28.5526315789474"
-                    Point3="-100.333333333333,32.5526315789474" />
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Dictionaries.Paths[Sort Output2]"
+          TopLeft="482.25,290">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
                   <mssgle:LineSegment
-                    End="-100.333333333333,62.5" />
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Dictionaries.Paths[Sort Output1]"
+          TopLeft="305.75,290">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30"
+              Start="0,0"
+              End="0,22.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Dictionaries.Paths[Sort Output]"
+          TopLeft="116.75,290">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28"
+              Start="0,0"
+              End="0,20.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Dictionaries.Paths[Multicast Output 5]"
+          TopLeft="465.333333333333,178">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="381.166666666667,76"
+              Start="0,0"
+              End="381.166666666667,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.8387096774193" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.8387096774193"
+                    Point2="0,20.8387096774193"
+                    Point3="4,20.8387096774193" />
+                  <mssgle:LineSegment
+                    End="377.166666666667,20.8387096774193" />
+                  <mssgle:CubicBezierSegment
+                    Point1="377.166666666667,20.8387096774193"
+                    Point2="381.166666666667,20.8387096774193"
+                    Point3="381.166666666667,24.8387096774193" />
+                  <mssgle:LineSegment
+                    End="381.166666666667,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Dictionaries.Paths[Multicast Output 4]"
+          TopLeft="446.666666666667,178">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="229.833333333333,73"
+              Start="0,0"
+              End="229.833333333333,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.7763157894737" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.7763157894737"
+                    Point2="0,29.7763157894737"
+                    Point3="4,29.7763157894737" />
+                  <mssgle:LineSegment
+                    End="225.833333333333,29.7763157894737" />
+                  <mssgle:CubicBezierSegment
+                    Point1="225.833333333333,29.7763157894737"
+                    Point2="229.833333333333,29.7763157894737"
+                    Point3="229.833333333333,33.7763157894737" />
+                  <mssgle:LineSegment
+                    End="229.833333333333,65.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6699,36 +6839,32 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="155,42"
-          Id="Package\Extract Dictionaries\TargetSubtypes"
-          TopLeft="599,251" />
         <EdgeLayout
-          Id="Package\Extract Dictionaries.Paths[Multicast Output 4]"
-          TopLeft="446.666666666667,178">
+          Id="Package\Extract Dictionaries.Paths[Multicast Output 2]"
+          TopLeft="409.333333333333,178">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="229.833333333333,73"
+              EndConnector="-100.333333333333,70"
               Start="0,0"
-              End="229.833333333333,65.5">
+              End="-100.333333333333,62.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.7763157894737" />
+                    End="0,24.5526315789474" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,25.7763157894737"
-                    Point2="0,29.7763157894737"
-                    Point3="4,29.7763157894737" />
+                    Point1="0,24.5526315789474"
+                    Point2="0,28.5526315789474"
+                    Point3="-4,28.5526315789474" />
                   <mssgle:LineSegment
-                    End="225.833333333333,29.7763157894737" />
+                    End="-96.3333333333333,28.5526315789474" />
                   <mssgle:CubicBezierSegment
-                    Point1="225.833333333333,29.7763157894737"
-                    Point2="229.833333333333,29.7763157894737"
-                    Point3="229.833333333333,33.7763157894737" />
+                    Point1="-96.3333333333333,28.5526315789474"
+                    Point2="-100.333333333333,28.5526315789474"
+                    Point3="-100.333333333333,32.5526315789474" />
                   <mssgle:LineSegment
-                    End="229.833333333333,65.5" />
+                    End="-100.333333333333,62.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6737,66 +6873,32 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="125,42"
-          Id="Package\Extract Dictionaries\Weapons"
-          TopLeft="784,254" />
         <EdgeLayout
-          Id="Package\Extract Dictionaries.Paths[Multicast Output 5]"
-          TopLeft="465.333333333333,178">
+          Id="Package\Extract Dictionaries.Paths[Multicast Output 1]"
+          TopLeft="390.666666666667,178">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="381.166666666667,76"
+              EndConnector="-271.166666666667,70"
               Start="0,0"
-              End="381.166666666667,68.5">
+              End="-271.166666666667,62.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.8387096774193" />
+                    End="0,15.1935483870968" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.8387096774193"
-                    Point2="0,20.8387096774193"
-                    Point3="4,20.8387096774193" />
+                    Point1="0,15.1935483870968"
+                    Point2="0,19.1935483870968"
+                    Point3="-4,19.1935483870968" />
                   <mssgle:LineSegment
-                    End="377.166666666667,20.8387096774193" />
+                    End="-267.166666666667,19.1935483870968" />
                   <mssgle:CubicBezierSegment
-                    Point1="377.166666666667,20.8387096774193"
-                    Point2="381.166666666667,20.8387096774193"
-                    Point3="381.166666666667,24.8387096774193" />
+                    Point1="-267.166666666667,19.1935483870968"
+                    Point2="-271.166666666667,19.1935483870968"
+                    Point3="-271.166666666667,23.1935483870968" />
                   <mssgle:LineSegment
-                    End="381.166666666667,68.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="145,42"
-          Id="Package\Extract Dictionaries\Countries SQL"
-          TopLeft="43,394" />
-        <NodeLayout
-          Size="164,42"
-          Id="Package\Extract Dictionaries\Countries Unicode"
-          TopLeft="32,318" />
-        <EdgeLayout
-          Id="Package\Extract Dictionaries.Paths[Sort Output]"
-          TopLeft="116.75,290">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28"
-              Start="0,0"
-              End="0,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5" />
+                    End="-271.166666666667,62.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6806,19 +6908,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Extract Dictionaries.Paths[Data Conversion Output]"
-          TopLeft="114.75,360">
+          Id="Package\Extract Dictionaries.Paths[Flat File Source Output]"
+          TopLeft="430.25,93">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34"
+              EndConnector="0,43"
               Start="0,0"
-              End="0,26.5">
+              End="0,35.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.5" />
+                    End="0,35.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -6827,162 +6929,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="157,42"
-          Id="Package\Extract Dictionaries\Regions Unicode"
-          TopLeft="224,320" />
         <EdgeLayout
-          Id="Package\Extract Dictionaries.Paths[Sort Output1]"
-          TopLeft="305.75,290">
+          Id="Package\Extract Dictionaries.Paths[Data Conversion Output4]"
+          TopLeft="856.25,362">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30"
+              EndConnector="0,38"
               Start="0,0"
-              End="0,22.5">
+              End="0,30.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="179,42"
-          Id="Package\Extract Dictionaries\TargetTypes Unicode"
-          TopLeft="393,321" />
-        <EdgeLayout
-          Id="Package\Extract Dictionaries.Paths[Sort Output2]"
-          TopLeft="482.25,290">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31"
-              Start="0,0"
-              End="0,23.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="194,42"
-          Id="Package\Extract Dictionaries\TargetSubtypes Unicode"
-          TopLeft="583,321" />
-        <EdgeLayout
-          Id="Package\Extract Dictionaries.Paths[Sort Output3]"
-          TopLeft="678.25,293">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28"
-              Start="0,0"
-              End="0,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="163,42"
-          Id="Package\Extract Dictionaries\Weapons Unicode"
-          TopLeft="785,320" />
-        <EdgeLayout
-          Id="Package\Extract Dictionaries.Paths[Sort Output4]"
-          TopLeft="846,296">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,24"
-              Start="0,0"
-              End="0,16.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="138,42"
-          Id="Package\Extract Dictionaries\Regions SQL"
-          TopLeft="233,398" />
-        <EdgeLayout
-          Id="Package\Extract Dictionaries.Paths[Data Conversion Output1]"
-          TopLeft="302.25,362">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36"
-              Start="0,0"
-              End="0,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="160,42"
-          Id="Package\Extract Dictionaries\TargetTypes SQL"
-          TopLeft="403,399" />
-        <NodeLayout
-          Size="175,42"
-          Id="Package\Extract Dictionaries\TargetSubtypes SQL"
-          TopLeft="590,400" />
-        <NodeLayout
-          Size="144,42"
-          Id="Package\Extract Dictionaries\Weapons SQL"
-          TopLeft="784,400" />
-        <EdgeLayout
-          Id="Package\Extract Dictionaries.Paths[Data Conversion Output2]"
-          TopLeft="482.75,363">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,36"
-              Start="0,0"
-              End="0,28.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,28.5" />
+                    End="0,30.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7014,19 +6974,63 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Extract Dictionaries.Paths[Data Conversion Output4]"
-          TopLeft="856.25,362">
+          Id="Package\Extract Dictionaries.Paths[Data Conversion Output2]"
+          TopLeft="482.75,363">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38"
+              EndConnector="0,36"
               Start="0,0"
-              End="0,30.5">
+              End="0,28.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5" />
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Dictionaries.Paths[Data Conversion Output1]"
+          TopLeft="302.25,362">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Extract Dictionaries.Paths[Data Conversion Output]"
+          TopLeft="114.75,360">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7039,7 +7043,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Extract Dictionaries\Countries SQL">
+    design-time-name="Package\Extract Dictionaries\TargetSubtypes SQL">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7055,15 +7059,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Extract Dictionaries\TargetTypes SQL">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Extract Dictionaries\TargetSubtypes SQL">
+    design-time-name="Package\Extract Dictionaries\Countries SQL">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -7072,6 +7068,14 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Extract Dictionaries\Weapons SQL">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Extract Dictionaries\TargetTypes SQL">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

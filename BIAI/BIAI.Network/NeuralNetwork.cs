@@ -44,7 +44,7 @@ namespace BIAI.Network
                     throw new ArgumentException($"Data set's number of output values ({dataSet.Outputs.Length}) does not match size of output layer ({outputLayer.Neurons.Length})", nameof(trainingDataSets));
             }
 
-            var learningDataCount = (int)Math.Floor(trainingDataSets.Count * learningRate);
+            var learningDataCount = (int)Math.Floor(trainingDataSets.Count * learningDataPercentage);
             foreach (var dataSet in trainingDataSets.Skip(learningDataCount))
             {
                 inputLayer.InsertValues(dataSet.Inputs);
