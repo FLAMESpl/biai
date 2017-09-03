@@ -1,27 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BIAI.Network
 {
-    public class Neuron
+    public class Neuron : INeuron
     {
-        private Dictionary<Neuron, double> activators = new Dictionary<Neuron, double>();
-        private Dictionary<Neuron, double> outputs = new Dictionary<Neuron, double>();
-
-        public double Bias { get; set; }
+        public IDictionary<INeuron, double> Activators { get; } = new Dictionary<INeuron, double>();
+        public IDictionary<INeuron, double> Outputs { get; } = new Dictionary<INeuron, double>();
+        
         public double Delta { get; set; }
         public double Value { get; set; }
 
-        public void AddActivator(Neuron neuron, double weigth)
+        public void AddActivator(INeuron neuron, double weigth)
         {
-            activators.Add(neuron, weigth);
-            neuron.outputs.Add(this, weigth);
+            Activators.Add(neuron, weigth);
+            neuron.Outputs.Add(this, weigth);
         }
 
         public void Compute()
         {
-            var inputsSum = Bias;
-            foreach (var connection in activators)
+            var inputsSum = 0d;
+            foreach (var connection in Activators)
             {
                 inputsSum += connection.Key.Value * connection.Value;
             }
@@ -31,7 +31,7 @@ namespace BIAI.Network
         public void ComputeDelta()
         {
             var error = 0d;
-            foreach (var output in outputs)
+            foreach (var output in Outputs)
             {
                 error += output.Value * output.Key.Delta;
             }
@@ -45,13 +45,12 @@ namespace BIAI.Network
 
         public void UpdateWeigths(double learningRate)
         {
-            foreach (var activator in activators.Keys)
+            foreach (var activator in Activators.Keys.ToList())
             {
                 var weigthDelta = learningRate * Delta * activator.Value;
-                activators[activator] += weigthDelta;
-                activator.outputs[this] += weigthDelta;
+                Activators[activator] += weigthDelta;
+                activator.Outputs[this] += weigthDelta;
             }
-            Bias += learningRate * Delta;
         }
     }
 }

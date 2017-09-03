@@ -40,9 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bias.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="NeuralNetwork.cs" />
     <Compile Include="Neuron.cs" />
+    <Compile Include="INeuron.cs" />
     <Compile Include="NeuronLayer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TrainingDataSet.cs" />

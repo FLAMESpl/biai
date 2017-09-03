@@ -6,28 +6,32 @@ namespace BIAI.Network
 {
     public class NeuralNetwork
     {
-        private NeuronLayer inputLayer => neuronLayers[0];
-        private NeuronLayer hiddenLayer => neuronLayers[1];
-        private NeuronLayer outputLayer => neuronLayers[2];
         private NeuronLayer[] neuronLayers = new NeuronLayer[3];
+
+        public NeuronLayer InputLayer => neuronLayers[0];
+        public NeuronLayer HiddenLayer => neuronLayers[1];
+        public NeuronLayer OutputLayer => neuronLayers[2];
+        public IReadOnlyList<NeuronLayer> NeuronLayers { get; private set; }
 
         public NeuralNetwork(int inputLayerNeuronsCount, int hiddenLayerNeuronsCount, int outputLayerNeuronsCount)
         {
             neuronLayers[0] = new NeuronLayer(inputLayerNeuronsCount);
-            neuronLayers[1] = new NeuronLayer(hiddenLayerNeuronsCount, inputLayer);
-            neuronLayers[2] = new NeuronLayer(outputLayerNeuronsCount, hiddenLayer);
+            neuronLayers[1] = new NeuronLayer(hiddenLayerNeuronsCount, InputLayer);
+            neuronLayers[2] = new NeuronLayer(outputLayerNeuronsCount, HiddenLayer);
+
+            NeuronLayers = Array.AsReadOnly(neuronLayers);
         }
 
         public double[] Predict(double[] values)
         {
-            if (values.Length != inputLayer.Neurons.Length)
+            if (values.Length != InputLayer.Neurons.Length)
                 throw new ArgumentException("Number of input values must match number of input neurons.", nameof(values));
 
-            inputLayer.InsertValues(values);
-            hiddenLayer.Compute();
-            outputLayer.Compute();
+            InputLayer.InsertValues(values);
+            HiddenLayer.Compute();
+            OutputLayer.Compute();
 
-            return outputLayer.GetValues();
+            return OutputLayer.GetValues();
         }
 
         public void Train(IReadOnlyCollection<TrainingDataSet> trainingDataSets, double learningRate, double learningDataPercentage)
@@ -37,26 +41,26 @@ namespace BIAI.Network
 
             foreach (var dataSet in trainingDataSets)
             {
-                if (dataSet.Inputs.Length != inputLayer.Neurons.Length)
-                    throw new ArgumentException($"Data set's number of input values ({dataSet.Inputs.Length}) does not match size of input layer ({inputLayer.Neurons.Length})", nameof(trainingDataSets));
+                if (dataSet.Inputs.Length != InputLayer.Neurons.Length)
+                    throw new ArgumentException($"Data set's number of input values ({dataSet.Inputs.Length}) does not match size of input layer ({InputLayer.Neurons.Length})", nameof(trainingDataSets));
                 
-                if (dataSet.Outputs.Length != outputLayer.Neurons.Length)
-                    throw new ArgumentException($"Data set's number of output values ({dataSet.Outputs.Length}) does not match size of output layer ({outputLayer.Neurons.Length})", nameof(trainingDataSets));
+                if (dataSet.Outputs.Length != OutputLayer.Neurons.Length)
+                    throw new ArgumentException($"Data set's number of output values ({dataSet.Outputs.Length}) does not match size of output layer ({OutputLayer.Neurons.Length})", nameof(trainingDataSets));
             }
 
             var learningDataCount = (int)Math.Floor(trainingDataSets.Count * learningDataPercentage);
             foreach (var dataSet in trainingDataSets.Skip(learningDataCount))
             {
-                inputLayer.InsertValues(dataSet.Inputs);
-                hiddenLayer.Compute();
-                outputLayer.Compute();
+                InputLayer.InsertValues(dataSet.Inputs);
+                HiddenLayer.Compute();
+                OutputLayer.Compute();
                 
-                outputLayer.ComputeDelta(dataSet.Outputs);
-                hiddenLayer.ComputeDelta();
-                inputLayer.ComputeDelta();
+                OutputLayer.ComputeDelta(dataSet.Outputs);
+                HiddenLayer.ComputeDelta();
+                InputLayer.ComputeDelta();
 
-                hiddenLayer.UpdateWeights(learningRate);
-                outputLayer.UpdateWeights(learningRate);
+                HiddenLayer.UpdateWeights(learningRate);
+                OutputLayer.UpdateWeights(learningRate);
             }
         }
     }

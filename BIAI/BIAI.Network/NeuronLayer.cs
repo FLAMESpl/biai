@@ -6,21 +6,26 @@ namespace BIAI.Network
     public class NeuronLayer
     {
         public Neuron[] Neurons { get; }
+        public Bias Bias { get; }
 
         public NeuronLayer(int size, NeuronLayer activatorsLayer = null)
         {
             Neurons = new Neuron[size];
+            Bias = new Bias();
+            var random = new Random();
+
             for (int i = 0; i < size; i++)
             {
-                var random = new Random();
                 var neuron = new Neuron();
-                neuron.Bias = random.NextNormalizedDouble();
+
                 if (activatorsLayer != null)
                 {
                     foreach (var activator in activatorsLayer.Neurons)
                     {
                         neuron.AddActivator(activator, random.NextNormalizedDouble());
                     }
+
+                    neuron.AddActivator(activatorsLayer.Bias, random.NextNormalizedDouble());
                 }
                 Neurons[i] = neuron;
             }
@@ -53,6 +58,7 @@ namespace BIAI.Network
             {
                 neuron.ComputeDelta();
             }
+            Bias.ComputeDelta();
         }
 
         public void ComputeDelta(double[] expectedValues)
@@ -69,6 +75,8 @@ namespace BIAI.Network
             {
                 neuron.UpdateWeigths(learningRate);
             }
+
+            // Bias has no activator therefore no need to call update weigths function
         }
     }
 }
