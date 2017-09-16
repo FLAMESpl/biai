@@ -2,7 +2,7 @@
 
 namespace BIAI.Data.Model
 {
-    public class Region
+    public class Region : ISystemDictionary
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long Id { get; private set; }

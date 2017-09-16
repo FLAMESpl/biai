@@ -10,22 +10,29 @@ namespace BIAI.Interface.Network
         public double Min { get; private set; }
         public PropertyInfo PropertyInfo { get; private set; }
 
-        public InputInitializer(PropertyInfo propertyInfo, AttackRecord sampleRecord)
+        public InputInitializer(PropertyInfo propertyInfo)
         {
             PropertyInfo = propertyInfo;
-            Max = PropertyInfo.GetValue(sampleRecord).Convert<double>();
-            Min = PropertyInfo.GetValue(sampleRecord).Convert<double>();
+            Max = double.MinValue;
+            Min = double.MaxValue;
         }
 
         public void UpdateLimits(AttackRecord attackRecord)
         {
-            var value = PropertyInfo.GetValue(attackRecord).Convert<double>();
+            var value = PropertyInfo.GetValue(attackRecord)?.Convert<double>();
+            if (value == null)
+                return;
+
             if (value > Max)
-                Max = value;
+                Max = value.Value;
             else if (value < Min)
-                Min = value;
+                Min = value.Value;
         }
 
-        public double GetValue(AttackRecord attackRecord) => PropertyInfo.GetValue(attackRecord).Convert<double>().Normalize(Min, Max);
+        public double? TryGetValue(AttackRecord attackRecord) => TryGetValue(PropertyInfo.GetValue(attackRecord));
+
+        public double? TryGetValue(object obj) => obj == null ? (double?)null : Normalize(obj.Convert<double>());
+
+        public double Normalize(double value) => value.Normalize(value < Min ? value : Min, value > Max ? value : Max);
     }
 }

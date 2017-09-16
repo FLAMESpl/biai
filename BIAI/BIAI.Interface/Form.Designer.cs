@@ -33,6 +33,9 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelColumns = new System.Windows.Forms.TableLayoutPanel();
             this.columnsDataGrid = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.selectedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.columnsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanelButtonsColumns = new System.Windows.Forms.TableLayoutPanel();
             this.buttonCheckSelected = new System.Windows.Forms.Button();
             this.buttonUncheckSelected = new System.Windows.Forms.Button();
@@ -48,13 +51,14 @@
             this.textBoxTrainingOutput = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelPrediction = new System.Windows.Forms.TableLayoutPanel();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.selectedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.columnsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.buttonPredict = new System.Windows.Forms.Button();
+            this.textBoxPredictOutput = new System.Windows.Forms.TextBox();
+            this.inputsGrid = new BIAI.Interface.Prediction.Controls.InputsGrid();
             this.tabPagePrediction.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanelColumns.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.columnsDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.columnsBindingSource)).BeginInit();
             this.tableLayoutPanelButtonsColumns.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanelNetwork.SuspendLayout();
@@ -62,7 +66,7 @@
             this.tableLayoutPanelTraining.SuspendLayout();
             this.tableLayoutPanelButtons.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.columnsBindingSource)).BeginInit();
+            this.tableLayoutPanelPrediction.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPagePrediction
@@ -119,6 +123,26 @@
             this.columnsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.columnsDataGrid.Size = new System.Drawing.Size(393, 187);
             this.columnsDataGrid.TabIndex = 0;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // selectedDataGridViewCheckBoxColumn
+            // 
+            this.selectedDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.selectedDataGridViewCheckBoxColumn.DataPropertyName = "Selected";
+            this.selectedDataGridViewCheckBoxColumn.HeaderText = "Selected";
+            this.selectedDataGridViewCheckBoxColumn.Name = "selectedDataGridViewCheckBoxColumn";
+            this.selectedDataGridViewCheckBoxColumn.Width = 75;
+            // 
+            // columnsBindingSource
+            // 
+            this.columnsBindingSource.DataSource = typeof(BIAI.Interface.Columns.ColumnSetting);
             // 
             // tableLayoutPanelButtonsColumns
             // 
@@ -275,6 +299,7 @@
             this.textBoxTrainingOutput.Multiline = true;
             this.textBoxTrainingOutput.Name = "textBoxTrainingOutput";
             this.textBoxTrainingOutput.ReadOnly = true;
+            this.textBoxTrainingOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBoxTrainingOutput.Size = new System.Drawing.Size(393, 187);
             this.textBoxTrainingOutput.TabIndex = 1;
             // 
@@ -293,34 +318,50 @@
             // 
             this.tableLayoutPanelPrediction.ColumnCount = 1;
             this.tableLayoutPanelPrediction.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelPrediction.Controls.Add(this.buttonPredict, 0, 2);
+            this.tableLayoutPanelPrediction.Controls.Add(this.textBoxPredictOutput, 0, 1);
+            this.tableLayoutPanelPrediction.Controls.Add(this.inputsGrid, 0, 0);
             this.tableLayoutPanelPrediction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelPrediction.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelPrediction.Name = "tableLayoutPanelPrediction";
-            this.tableLayoutPanelPrediction.RowCount = 2;
+            this.tableLayoutPanelPrediction.RowCount = 3;
             this.tableLayoutPanelPrediction.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelPrediction.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 98F));
             this.tableLayoutPanelPrediction.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanelPrediction.Size = new System.Drawing.Size(399, 229);
             this.tableLayoutPanelPrediction.TabIndex = 0;
             // 
-            // nameDataGridViewTextBoxColumn
+            // buttonPredict
             // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.buttonPredict.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonPredict.Location = new System.Drawing.Point(321, 196);
+            this.buttonPredict.Name = "buttonPredict";
+            this.buttonPredict.Size = new System.Drawing.Size(75, 30);
+            this.buttonPredict.TabIndex = 0;
+            this.buttonPredict.Text = "Predict";
+            this.buttonPredict.UseVisualStyleBackColor = true;
+            this.buttonPredict.Click += new System.EventHandler(this.OnClickPredict);
             // 
-            // selectedDataGridViewCheckBoxColumn
+            // textBoxPredictOutput
             // 
-            this.selectedDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.selectedDataGridViewCheckBoxColumn.DataPropertyName = "Selected";
-            this.selectedDataGridViewCheckBoxColumn.HeaderText = "Selected";
-            this.selectedDataGridViewCheckBoxColumn.Name = "selectedDataGridViewCheckBoxColumn";
-            this.selectedDataGridViewCheckBoxColumn.Width = 75;
+            this.textBoxPredictOutput.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxPredictOutput.Location = new System.Drawing.Point(3, 98);
+            this.textBoxPredictOutput.Multiline = true;
+            this.textBoxPredictOutput.Name = "textBoxPredictOutput";
+            this.textBoxPredictOutput.ReadOnly = true;
+            this.textBoxPredictOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxPredictOutput.Size = new System.Drawing.Size(393, 92);
+            this.textBoxPredictOutput.TabIndex = 1;
             // 
-            // columnsBindingSource
+            // inputsGrid
             // 
-            this.columnsBindingSource.DataSource = typeof(BIAI.Interface.Columns.ColumnSetting);
+            this.inputsGrid.AutoScroll = true;
+            this.inputsGrid.CellHeight = 30F;
+            this.inputsGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.inputsGrid.Location = new System.Drawing.Point(3, 3);
+            this.inputsGrid.Name = "inputsGrid";
+            this.inputsGrid.Size = new System.Drawing.Size(393, 89);
+            this.inputsGrid.TabIndex = 2;
             // 
             // Form
             // 
@@ -335,6 +376,7 @@
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanelColumns.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.columnsDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.columnsBindingSource)).EndInit();
             this.tableLayoutPanelButtonsColumns.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanelNetwork.ResumeLayout(false);
@@ -343,7 +385,8 @@
             this.tableLayoutPanelTraining.PerformLayout();
             this.tableLayoutPanelButtons.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.columnsBindingSource)).EndInit();
+            this.tableLayoutPanelPrediction.ResumeLayout(false);
+            this.tableLayoutPanelPrediction.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -372,6 +415,9 @@
         private System.Windows.Forms.Button buttonCheckSelected;
         private System.Windows.Forms.Button buttonUncheckSelected;
         private System.Windows.Forms.Button buttonNextColumns;
+        private System.Windows.Forms.Button buttonPredict;
+        private System.Windows.Forms.TextBox textBoxPredictOutput;
+        private Prediction.Controls.InputsGrid inputsGrid;
     }
 }
 

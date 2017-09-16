@@ -2,7 +2,7 @@
 
 namespace BIAI.Data.Model
 {
-    public class Country
+    public class Country : ISystemDictionary
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long Id { get; private set; }

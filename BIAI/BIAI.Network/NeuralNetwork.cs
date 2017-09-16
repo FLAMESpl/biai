@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace BIAI.Network
 {
@@ -13,8 +12,12 @@ namespace BIAI.Network
         public NeuronLayer OutputLayer => neuronLayers[2];
         public IReadOnlyList<NeuronLayer> NeuronLayers { get; private set; }
 
+        public double Accuracy { get; private set; }
+
         public NeuralNetwork(int inputLayerNeuronsCount, int hiddenLayerNeuronsCount, int outputLayerNeuronsCount)
         {
+            //System.Diagnostics.Debugger.Break();
+
             neuronLayers[0] = new NeuronLayer(inputLayerNeuronsCount);
             neuronLayers[1] = new NeuronLayer(hiddenLayerNeuronsCount, InputLayer);
             neuronLayers[2] = new NeuronLayer(outputLayerNeuronsCount, HiddenLayer);
@@ -34,7 +37,7 @@ namespace BIAI.Network
             return OutputLayer.GetValues();
         }
 
-        public void Train(IReadOnlyCollection<TrainingDataSet> trainingDataSets, double learningRate, double learningDataPercentage)
+        public void Train(IReadOnlyList<TrainingDataSet> trainingDataSets, double learningRate, double learningDataPercentage)
         {
             if (learningDataPercentage > 1 || learningDataPercentage < 0)
                 throw new ArgumentException("Percentage of training data must be a value between 0 and 1.", nameof(learningDataPercentage));
@@ -47,21 +50,35 @@ namespace BIAI.Network
                 if (dataSet.Outputs.Length != OutputLayer.Neurons.Length)
                     throw new ArgumentException($"Data set's number of output values ({dataSet.Outputs.Length}) does not match size of output layer ({OutputLayer.Neurons.Length})", nameof(trainingDataSets));
             }
-
+            
             var learningDataCount = (int)Math.Floor(trainingDataSets.Count * learningDataPercentage);
-            foreach (var dataSet in trainingDataSets.Skip(learningDataCount))
+
+            for (int i = 0; i < learningDataCount; i++)
             {
-                InputLayer.InsertValues(dataSet.Inputs);
+                InputLayer.InsertValues(trainingDataSets[i].Inputs);
                 HiddenLayer.Compute();
                 OutputLayer.Compute();
-                
-                OutputLayer.ComputeDelta(dataSet.Outputs);
+
+                OutputLayer.ComputeDelta(trainingDataSets[i].Outputs);
                 HiddenLayer.ComputeDelta();
                 InputLayer.ComputeDelta();
 
                 HiddenLayer.UpdateWeights(learningRate);
                 OutputLayer.UpdateWeights(learningRate);
+            } 
+
+            var total = 0d;
+            for (int i = learningDataCount; i < trainingDataSets.Count; i++)
+            {
+                var outcome = Predict(trainingDataSets[i].Inputs);
+
+                for (int j = 0; j < outcome.Length; j++)
+                {
+                    total += Math.Abs(trainingDataSets[i].Outputs[j] + outcome[j]) / 2;
+                }
             }
+
+            Accuracy = total / ((trainingDataSets.Count - learningDataCount) * OutputLayer.Neurons.Length);
         }
     }
 }

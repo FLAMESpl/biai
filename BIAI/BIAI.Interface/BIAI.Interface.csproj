@@ -66,10 +66,41 @@
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="Network\InputInitializer.cs" />
     <Compile Include="Network\NeuralNetworkService.cs" />
+    <Compile Include="Network\Limits.cs" />
+    <Compile Include="Network\ProcessResult.cs" />
+    <Compile Include="Prediction\Controls\DictionaryInput.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Prediction\Controls\DictionaryInput.Designer.cs">
+      <DependentUpon>DictionaryInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prediction\Controls\EnumInput.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Prediction\Controls\EnumInput.Designer.cs">
+      <DependentUpon>EnumInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prediction\Controls\InputsGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Prediction\Controls\InputsGrid.Designer.cs">
+      <DependentUpon>InputsGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prediction\Controls\NumberInput.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Prediction\Controls\NumberInput.Designer.cs">
+      <DependentUpon>NumberInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prediction\IInputProvider.cs" />
+    <Compile Include="Prediction\InputValueException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form.resx">
       <DependentUpon>Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prediction\Controls\InputsGrid.resx">
+      <DependentUpon>InputsGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

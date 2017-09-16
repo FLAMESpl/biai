@@ -2,7 +2,7 @@
 
 namespace BIAI.Data.Model
 {
-    public class TargetType
+    public class TargetType : ISystemDictionary
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public long Id { get; private set; }

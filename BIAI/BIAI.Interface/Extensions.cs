@@ -1,7 +1,4 @@
-﻿using BIAI.Data.Model;
-using System.Reflection;
-
-namespace BIAI.Interface
+﻿namespace BIAI.Interface
 {
     public static class Extensions
     {

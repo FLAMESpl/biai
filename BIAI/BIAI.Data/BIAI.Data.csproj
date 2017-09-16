@@ -66,6 +66,7 @@
     <Compile Include="Model\Enums\DoubtBoolean.cs" />
     <Compile Include="Model\Enums\HostageKidnappingOutcome.cs" />
     <Compile Include="Model\Enums\PropertyDamageValue.cs" />
+    <Compile Include="Model\ISystemDictionary.cs" />
     <Compile Include="Model\Region.cs" />
     <Compile Include="Model\TargetSubtype.cs" />
     <Compile Include="Model\TargetType.cs" />

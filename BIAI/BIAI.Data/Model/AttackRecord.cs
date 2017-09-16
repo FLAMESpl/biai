@@ -53,7 +53,7 @@ namespace BIAI.Data.Model
         public DoubtBoolean? WasLogisticallyInternational { get; private set; }
         public DoubtBoolean? WasIdeologicallyInternational { get; private set; }
         public DoubtBoolean? WasInternational { get; private set; }
-
+        
         public Country Country { get; private set; }
         public Region Region { get; private set; }
         public TargetType TargetType { get; private set; }

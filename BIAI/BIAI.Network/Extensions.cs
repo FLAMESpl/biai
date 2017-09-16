@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BIAI.Network
 {
     public static class Extensions
     {
-        public static double NextNormalizedDouble(this Random r) => r.NextDouble() * 2 - 1;
+        public static double NextNormalizedDouble(this Random r) => r.NextDouble();
 
         public static double Normalize(this double value, double min, double max) => (value - min) / (max - min);
 

@@ -25,7 +25,7 @@ namespace BIAI.Network
             {
                 inputsSum += connection.Key.Value * connection.Value;
             }
-            Value = 1d / (Math.Exp(inputsSum) + 1);
+            Value = 1d / (Math.Exp(-inputsSum) + 1);
         }
 
         public void ComputeDelta()
