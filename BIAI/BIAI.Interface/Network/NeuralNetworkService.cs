@@ -4,6 +4,7 @@ using BIAI.Interface.Logging;
 using BIAI.Network;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity.SqlServer;
 using System.Linq;
 
 namespace BIAI.Interface.Network
@@ -33,6 +34,8 @@ namespace BIAI.Interface.Network
             network = new NeuralNetwork(Columns.Count, Columns.Count, this.outputIntervals.Length);
             this.trainingLogger = trainingLogger;
             this.predictingLogger = predictingLogger;
+            this.learningRate = learningRate;
+            this.learningDataRatio = learningDataRatio;
         }
 
         public void Start()
@@ -53,7 +56,8 @@ namespace BIAI.Interface.Network
                 initializers = Columns.Select(x => new InputInitializer(x.PropertyInfo)).ToList();
 
                 trainingLogger.Message("Downloading data");
-                var attackRecords = db.AttackRecords.ToList();
+                var rnd = new Random().NextDouble();
+                var attackRecords = db.AttackRecords.OrderBy(x => SqlFunctions.Checksum(x.Id * rnd)).ThenBy(x => x.Id).ToList();
 
                 trainingLogger.Message("Normalizing data");
                 for (int i = 0; i < count; i++)

@@ -59,6 +59,7 @@
       <DependentUpon>201708271142491_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Annotations\Dictionary.cs" />
     <Compile Include="Model\AttackRecord.cs" />
     <Compile Include="Model\Country.cs" />
     <Compile Include="Model\Enums\AttackType.cs" />

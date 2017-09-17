@@ -71,7 +71,7 @@ namespace BIAI.Interface.Prediction.Controls
                 return new NumberInput(propertyInfo.Name);
 
             if (type == typeof(bool) || type.IsEnum)
-                return new EnumInput(propertyInfo.Name, type, nullable);
+                return new EnumInput(propertyInfo.Name, type);
 
             throw new InvalidOperationException("Unrecognized input type.");
         }

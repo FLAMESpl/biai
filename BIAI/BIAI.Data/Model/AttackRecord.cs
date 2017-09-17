@@ -1,4 +1,5 @@
-﻿using BIAI.Data.Model.Enums;
+﻿using BIAI.Data.Model.Annotations;
+using BIAI.Data.Model.Enums;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BIAI.Data.Model
@@ -11,7 +12,11 @@ namespace BIAI.Data.Model
         public long Month { get; private set; }
         public long Day { get; private set; }
         public bool? Extended24Hours { get; private set; }
+
+        [Dictionary("Countries")]
         public long? CountryId { get; private set; }
+
+        [Dictionary("Regions")]
         public long? RegionId { get; private set; }
         public string Latitude { get; private set; }
         public string Longitude { get; private set; }
@@ -26,7 +31,11 @@ namespace BIAI.Data.Model
         public bool? WasSuccessful { get; private set; }
         public bool? WasSuicidalAttack { get; private set; }
         public AttackType AttackType { get; private set; }
+
+        [Dictionary("TargetTypes")]
         public long? TargetTypeId { get; private set; }
+
+        [Dictionary("TargetSubtypes")]
         public long? TargetSubTypeId { get; private set; }
         public bool? OrganizationNameDeduced { get; private set; }
         public bool? WasIndividualAttack { get; private set; }
@@ -34,6 +43,8 @@ namespace BIAI.Data.Model
         public bool? ResponsibilityWasClaimed { get; private set; }
         public ClaimMode? ClaimMode { get; private set; }
         public DoubtBoolean? WasClaimCompeting { get; private set; }
+
+        [Dictionary("Weapons")]
         public long? WeaponTypeId { get; private set; }
         public long Fatalities { get; private set; }
         public long? USCitizensKilled { get; private set; }
@@ -58,5 +69,6 @@ namespace BIAI.Data.Model
         public Region Region { get; private set; }
         public TargetType TargetType { get; private set; }
         public TargetSubtype TargetSubtype { get; private set; }
+        public Weapon Weapon { get; private set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using BIAI.Data;
 using BIAI.Data.Model;
+using BIAI.Data.Model.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -15,13 +16,14 @@ namespace BIAI.Interface.Prediction.Controls
         public string DictionaryName { get; private set; }
         private Dictionary<int, long> dictionaryMapping = new Dictionary<int, long>();
 
-        public DictionaryInput(string name)
+        public DictionaryInput(string name, Dictionary dictionaryData)
         {
             InitializeComponent();
 
             DropDownStyle = ComboBoxStyle.DropDownList;
             InputName = name;
             DictionaryName = name.Substring(0, name.Length - 2);
+
             using (var db = new GlobalTerrorismContext())
             {
                 var type = typeof(ISystemDictionary).Assembly.GetType($"BIAI.Data.Model.{DictionaryName}");
