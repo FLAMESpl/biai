@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 using System.Windows.Forms;
 
 namespace BIAI.Interface.Prediction.Controls
@@ -9,12 +8,12 @@ namespace BIAI.Interface.Prediction.Controls
         private Type type;
 
         public string InputName { get; private set; }
-        public bool IsNullable { get; private set; }
 
-        public EnumInput(string name, Type type, bool isNullable)
+        public EnumInput(string name, Type type)
         {
             InitializeComponent();
 
+            DropDownStyle = ComboBoxStyle.DropDownList;
             InputName = name;
             this.type = type;
 

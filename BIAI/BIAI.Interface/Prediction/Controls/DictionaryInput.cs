@@ -18,6 +18,8 @@ namespace BIAI.Interface.Prediction.Controls
         public DictionaryInput(string name)
         {
             InitializeComponent();
+
+            DropDownStyle = ComboBoxStyle.DropDownList;
             InputName = name;
             DictionaryName = name.Substring(0, name.Length - 2);
             using (var db = new GlobalTerrorismContext())

@@ -33,16 +33,21 @@
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelColumns = new System.Windows.Forms.TableLayoutPanel();
             this.columnsDataGrid = new System.Windows.Forms.DataGridView();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.selectedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.columnsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanelButtonsColumns = new System.Windows.Forms.TableLayoutPanel();
             this.buttonCheckSelected = new System.Windows.Forms.Button();
             this.buttonUncheckSelected = new System.Windows.Forms.Button();
             this.buttonNextColumns = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelNetwork = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanelNeuralNetworkSettings = new System.Windows.Forms.TableLayoutPanel();
+            this.labelLearningDataRatio = new System.Windows.Forms.Label();
+            this.labelLearningRate = new System.Windows.Forms.Label();
+            this.textBoxLearningDataRatio = new System.Windows.Forms.TextBox();
+            this.textBoxLearningRate = new System.Windows.Forms.TextBox();
+            this.gridOutputIntervals = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonNextNetwork = new System.Windows.Forms.Button();
+            this.buttonAddInterval = new System.Windows.Forms.Button();
             this.tabPageTraining = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelTraining = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanelButtons = new System.Windows.Forms.TableLayoutPanel();
@@ -53,20 +58,30 @@
             this.tableLayoutPanelPrediction = new System.Windows.Forms.TableLayoutPanel();
             this.buttonPredict = new System.Windows.Forms.Button();
             this.textBoxPredictOutput = new System.Windows.Forms.TextBox();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.selectedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.columnsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lowDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.highDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.outputIntervalsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inputsGrid = new BIAI.Interface.Prediction.Controls.InputsGrid();
             this.tabPagePrediction.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanelColumns.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.columnsDataGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.columnsBindingSource)).BeginInit();
             this.tableLayoutPanelButtonsColumns.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tableLayoutPanelNetwork.SuspendLayout();
+            this.tableLayoutPanelNeuralNetworkSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridOutputIntervals)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
             this.tabPageTraining.SuspendLayout();
             this.tableLayoutPanelTraining.SuspendLayout();
             this.tableLayoutPanelButtons.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanelPrediction.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.columnsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outputIntervalsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabPagePrediction
@@ -123,26 +138,6 @@
             this.columnsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.columnsDataGrid.Size = new System.Drawing.Size(393, 187);
             this.columnsDataGrid.TabIndex = 0;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // selectedDataGridViewCheckBoxColumn
-            // 
-            this.selectedDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.selectedDataGridViewCheckBoxColumn.DataPropertyName = "Selected";
-            this.selectedDataGridViewCheckBoxColumn.HeaderText = "Selected";
-            this.selectedDataGridViewCheckBoxColumn.Name = "selectedDataGridViewCheckBoxColumn";
-            this.selectedDataGridViewCheckBoxColumn.Width = 75;
-            // 
-            // columnsBindingSource
-            // 
-            this.columnsBindingSource.DataSource = typeof(BIAI.Interface.Columns.ColumnSetting);
             // 
             // tableLayoutPanelButtonsColumns
             // 
@@ -207,27 +202,130 @@
             // tableLayoutPanelNetwork
             // 
             this.tableLayoutPanelNetwork.ColumnCount = 1;
-            this.tableLayoutPanelNetwork.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelNetwork.Controls.Add(this.buttonNextNetwork, 0, 1);
+            this.tableLayoutPanelNetwork.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelNetwork.Controls.Add(this.tableLayoutPanelNeuralNetworkSettings, 0, 0);
+            this.tableLayoutPanelNetwork.Controls.Add(this.gridOutputIntervals, 0, 1);
+            this.tableLayoutPanelNetwork.Controls.Add(this.tableLayoutPanel1, 0, 2);
             this.tableLayoutPanelNetwork.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelNetwork.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelNetwork.Name = "tableLayoutPanelNetwork";
-            this.tableLayoutPanelNetwork.RowCount = 2;
+            this.tableLayoutPanelNetwork.RowCount = 3;
+            this.tableLayoutPanelNetwork.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 59F));
             this.tableLayoutPanelNetwork.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelNetwork.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanelNetwork.Size = new System.Drawing.Size(399, 229);
             this.tableLayoutPanelNetwork.TabIndex = 1;
             // 
+            // tableLayoutPanelNeuralNetworkSettings
+            // 
+            this.tableLayoutPanelNeuralNetworkSettings.ColumnCount = 3;
+            this.tableLayoutPanelNeuralNetworkSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
+            this.tableLayoutPanelNeuralNetworkSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 92F));
+            this.tableLayoutPanelNeuralNetworkSettings.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanelNeuralNetworkSettings.Controls.Add(this.labelLearningDataRatio, 0, 0);
+            this.tableLayoutPanelNeuralNetworkSettings.Controls.Add(this.labelLearningRate, 0, 1);
+            this.tableLayoutPanelNeuralNetworkSettings.Controls.Add(this.textBoxLearningDataRatio, 1, 0);
+            this.tableLayoutPanelNeuralNetworkSettings.Controls.Add(this.textBoxLearningRate, 1, 1);
+            this.tableLayoutPanelNeuralNetworkSettings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanelNeuralNetworkSettings.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanelNeuralNetworkSettings.Name = "tableLayoutPanelNeuralNetworkSettings";
+            this.tableLayoutPanelNeuralNetworkSettings.RowCount = 2;
+            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanelNeuralNetworkSettings.Size = new System.Drawing.Size(393, 53);
+            this.tableLayoutPanelNeuralNetworkSettings.TabIndex = 2;
+            // 
+            // labelLearningDataRatio
+            // 
+            this.labelLearningDataRatio.AutoSize = true;
+            this.labelLearningDataRatio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelLearningDataRatio.Location = new System.Drawing.Point(3, 0);
+            this.labelLearningDataRatio.Name = "labelLearningDataRatio";
+            this.labelLearningDataRatio.Size = new System.Drawing.Size(126, 26);
+            this.labelLearningDataRatio.TabIndex = 0;
+            this.labelLearningDataRatio.Text = "Learning data ratio";
+            this.labelLearningDataRatio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelLearningRate
+            // 
+            this.labelLearningRate.AutoSize = true;
+            this.labelLearningRate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelLearningRate.Location = new System.Drawing.Point(3, 26);
+            this.labelLearningRate.Name = "labelLearningRate";
+            this.labelLearningRate.Size = new System.Drawing.Size(126, 27);
+            this.labelLearningRate.TabIndex = 1;
+            this.labelLearningRate.Text = "Learning rate";
+            this.labelLearningRate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxLearningDataRatio
+            // 
+            this.textBoxLearningDataRatio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxLearningDataRatio.Location = new System.Drawing.Point(135, 3);
+            this.textBoxLearningDataRatio.Name = "textBoxLearningDataRatio";
+            this.textBoxLearningDataRatio.Size = new System.Drawing.Size(86, 20);
+            this.textBoxLearningDataRatio.TabIndex = 2;
+            this.textBoxLearningDataRatio.Text = "0,7";
+            // 
+            // textBoxLearningRate
+            // 
+            this.textBoxLearningRate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxLearningRate.Location = new System.Drawing.Point(135, 29);
+            this.textBoxLearningRate.Name = "textBoxLearningRate";
+            this.textBoxLearningRate.Size = new System.Drawing.Size(86, 20);
+            this.textBoxLearningRate.TabIndex = 3;
+            this.textBoxLearningRate.Text = "0,001";
+            // 
+            // gridOutputIntervals
+            // 
+            this.gridOutputIntervals.AutoGenerateColumns = false;
+            this.gridOutputIntervals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridOutputIntervals.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.lowDataGridViewTextBoxColumn,
+            this.highDataGridViewTextBoxColumn});
+            this.gridOutputIntervals.DataSource = this.outputIntervalsBindingSource;
+            this.gridOutputIntervals.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridOutputIntervals.Location = new System.Drawing.Point(3, 62);
+            this.gridOutputIntervals.Name = "gridOutputIntervals";
+            this.gridOutputIntervals.Size = new System.Drawing.Size(393, 128);
+            this.gridOutputIntervals.TabIndex = 3;
+            this.gridOutputIntervals.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.OnOutputIntervalsBindingError);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Controls.Add(this.buttonNextNetwork, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.buttonAddInterval, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 196);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(393, 30);
+            this.tableLayoutPanel1.TabIndex = 4;
+            // 
             // buttonNextNetwork
             // 
             this.buttonNextNetwork.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonNextNetwork.Location = new System.Drawing.Point(321, 196);
+            this.buttonNextNetwork.Location = new System.Drawing.Point(315, 3);
             this.buttonNextNetwork.Name = "buttonNextNetwork";
-            this.buttonNextNetwork.Size = new System.Drawing.Size(75, 30);
-            this.buttonNextNetwork.TabIndex = 0;
+            this.buttonNextNetwork.Size = new System.Drawing.Size(75, 24);
+            this.buttonNextNetwork.TabIndex = 1;
             this.buttonNextNetwork.Text = "Next";
             this.buttonNextNetwork.UseVisualStyleBackColor = true;
             this.buttonNextNetwork.Click += new System.EventHandler(this.OnClickNext);
+            // 
+            // buttonAddInterval
+            // 
+            this.buttonAddInterval.Dock = System.Windows.Forms.DockStyle.Right;
+            this.buttonAddInterval.Location = new System.Drawing.Point(234, 3);
+            this.buttonAddInterval.Name = "buttonAddInterval";
+            this.buttonAddInterval.Size = new System.Drawing.Size(75, 24);
+            this.buttonAddInterval.TabIndex = 2;
+            this.buttonAddInterval.Text = "Add interval";
+            this.buttonAddInterval.UseVisualStyleBackColor = true;
+            this.buttonAddInterval.Click += new System.EventHandler(this.OnClickAddInterval);
             // 
             // tabPageTraining
             // 
@@ -353,6 +451,42 @@
             this.textBoxPredictOutput.Size = new System.Drawing.Size(393, 92);
             this.textBoxPredictOutput.TabIndex = 1;
             // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // selectedDataGridViewCheckBoxColumn
+            // 
+            this.selectedDataGridViewCheckBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.selectedDataGridViewCheckBoxColumn.DataPropertyName = "Selected";
+            this.selectedDataGridViewCheckBoxColumn.HeaderText = "Selected";
+            this.selectedDataGridViewCheckBoxColumn.Name = "selectedDataGridViewCheckBoxColumn";
+            this.selectedDataGridViewCheckBoxColumn.Width = 75;
+            // 
+            // columnsBindingSource
+            // 
+            this.columnsBindingSource.DataSource = typeof(BIAI.Interface.Columns.ColumnSetting);
+            // 
+            // lowDataGridViewTextBoxColumn
+            // 
+            this.lowDataGridViewTextBoxColumn.DataPropertyName = "Low";
+            this.lowDataGridViewTextBoxColumn.HeaderText = "Low";
+            this.lowDataGridViewTextBoxColumn.Name = "lowDataGridViewTextBoxColumn";
+            // 
+            // highDataGridViewTextBoxColumn
+            // 
+            this.highDataGridViewTextBoxColumn.DataPropertyName = "High";
+            this.highDataGridViewTextBoxColumn.HeaderText = "High";
+            this.highDataGridViewTextBoxColumn.Name = "highDataGridViewTextBoxColumn";
+            // 
+            // outputIntervalsBindingSource
+            // 
+            this.outputIntervalsBindingSource.DataSource = typeof(BIAI.Interface.Network.Limits);
+            // 
             // inputsGrid
             // 
             this.inputsGrid.AutoScroll = true;
@@ -376,10 +510,13 @@
             this.tabPage1.ResumeLayout(false);
             this.tableLayoutPanelColumns.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.columnsDataGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.columnsBindingSource)).EndInit();
             this.tableLayoutPanelButtonsColumns.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tableLayoutPanelNetwork.ResumeLayout(false);
+            this.tableLayoutPanelNeuralNetworkSettings.ResumeLayout(false);
+            this.tableLayoutPanelNeuralNetworkSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridOutputIntervals)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.tabPageTraining.ResumeLayout(false);
             this.tableLayoutPanelTraining.ResumeLayout(false);
             this.tableLayoutPanelTraining.PerformLayout();
@@ -387,6 +524,8 @@
             this.tabPage3.ResumeLayout(false);
             this.tableLayoutPanelPrediction.ResumeLayout(false);
             this.tableLayoutPanelPrediction.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.columnsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.outputIntervalsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -402,7 +541,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn selectedDataGridViewCheckBoxColumn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelNetwork;
-        private System.Windows.Forms.Button buttonNextNetwork;
         private System.Windows.Forms.TabPage tabPageTraining;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelTraining;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelButtons;
@@ -418,6 +556,18 @@
         private System.Windows.Forms.Button buttonPredict;
         private System.Windows.Forms.TextBox textBoxPredictOutput;
         private Prediction.Controls.InputsGrid inputsGrid;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanelNeuralNetworkSettings;
+        private System.Windows.Forms.Label labelLearningDataRatio;
+        private System.Windows.Forms.Label labelLearningRate;
+        private System.Windows.Forms.TextBox textBoxLearningDataRatio;
+        private System.Windows.Forms.TextBox textBoxLearningRate;
+        private System.Windows.Forms.DataGridView gridOutputIntervals;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lowDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn highDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource outputIntervalsBindingSource;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button buttonNextNetwork;
+        private System.Windows.Forms.Button buttonAddInterval;
     }
 }
 

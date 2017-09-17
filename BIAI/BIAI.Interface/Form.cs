@@ -5,6 +5,7 @@ using BIAI.Interface.Network;
 using BIAI.Interface.Prediction;
 using BIAI.Interface.Prediction.Controls;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
@@ -50,8 +51,39 @@ namespace BIAI.Interface
         {
             if (!trainingInProgress)
             {
-                var arr = new Limits[4] { new Limits(0, 0), new Limits(1, 3), new Limits(4, 6), new Limits(7, null) };
-                var neuralNetworkService = new NeuralNetworkService(columnsBindingSource.List.Cast<ColumnSetting>(), trainingLogger, predictionLogger, arr);
+                double learningRate;
+                double learningDataRatio;
+
+                if (!Double.TryParse(textBoxLearningRate.Text, out learningRate))
+                {
+                    ShowError("Could not parse learning rate value.");
+                    return;
+                }
+
+                if (!Double.TryParse(textBoxLearningDataRatio.Text, out learningDataRatio))
+                {
+                    ShowError("Could not parse learning data ratio value.");
+                    return;
+                }
+
+                if (learningDataRatio >= 1d)
+                {
+                    ShowError("Learning ratio must be less than 1.");
+                    return;
+                }
+
+                var intervals = outputIntervalsBindingSource.Cast<Limits>();
+                if (!ValidateLimits(intervals))
+                    return;
+                
+                var neuralNetworkService = new NeuralNetworkService(
+                    columnSettings: columnsBindingSource.List.Cast<ColumnSetting>(),
+                    trainingLogger: trainingLogger,
+                    predictingLogger: predictionLogger,
+                    outputIntervals: intervals,
+                    learningRate: learningRate, 
+                    learningDataRatio: learningDataRatio);
+
                 neuralNetworkService.TrainingCompleted += OnNetworkTrainingComplete;
                 neuralNetworkService.PredictionCompleted += OnPredictionComplete;
                 var thread = new Thread(neuralNetworkService.Start);
@@ -117,6 +149,16 @@ namespace BIAI.Interface
             predictionInProgress = false;
         }
 
+        private void OnClickAddInterval(object sender, EventArgs e)
+        {
+            outputIntervalsBindingSource.Add(new Limits(null, null));
+        }
+
+        private void OnOutputIntervalsBindingError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            ShowError("Interval output limit must be an empty or integral value.");
+        }
+
         private void SetText(string text, Control control)
         {
             if (InvokeRequired)
@@ -138,5 +180,30 @@ namespace BIAI.Interface
         }
 
         private void ShowError(string text) => MessageBox.Show(text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+        private bool ValidateLimits(IEnumerable<Limits> limitsCollection)
+        {
+            var limitsSoFar = new List<Limits>();
+
+            foreach (var limits in limitsCollection)
+            {
+                if (limits.Low > limits.High)
+                {
+                    ShowError("Bottom limit is higher than upper.");
+                    return false;
+                }
+
+                if (limitsSoFar.Any(x => (x.High == null || limits.Low == null || x.High > limits.Low) 
+                                    && (x.Low == null || limits.High == null || x.Low < limits.High)))
+                {
+                    ShowError("Output intervals are overlapping.");
+                    return false;
+                }
+
+                limitsSoFar.Add(limits);
+            }
+
+            return true;
+        }
     }
 }

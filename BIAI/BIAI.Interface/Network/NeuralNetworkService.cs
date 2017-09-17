@@ -20,10 +20,13 @@ namespace BIAI.Interface.Network
         private Logger predictingLogger;
         private Limits[] outputIntervals;
         private List<InputInitializer> initializers;
+        private double learningRate;
+        private double learningDataRatio;
 
         public IReadOnlyList<ColumnSetting> Columns { get; }
 
-        public NeuralNetworkService(IEnumerable<ColumnSetting> columnSettings, Logger trainingLogger, Logger predictingLogger, IEnumerable<Limits> outputIntervals)
+        public NeuralNetworkService(IEnumerable<ColumnSetting> columnSettings, Logger trainingLogger, Logger predictingLogger, 
+            IEnumerable<Limits> outputIntervals, double learningRate, double learningDataRatio)
         {
             this.outputIntervals = outputIntervals.ToArray();
             Columns = columnSettings.Where(x => x.Selected).ToList();
@@ -94,8 +97,8 @@ namespace BIAI.Interface.Network
 
             network.Train(
                 trainingDataSets: dataSets,
-                learningRate: 0.1,
-                learningDataPercentage: 0.7
+                learningRate: learningRate,
+                learningDataPercentage: learningDataRatio
             );
 
             trainingLogger.Message("Finished");

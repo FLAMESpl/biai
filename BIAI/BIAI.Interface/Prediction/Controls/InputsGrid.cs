@@ -64,7 +64,7 @@ namespace BIAI.Interface.Prediction.Controls
             if (!nullable)
                 type = propertyInfo.PropertyType;
 
-            if (propertyInfo.Name.EndsWith("Id"))
+            if (propertyInfo.Name.Length != 2 && propertyInfo.Name.EndsWith("Id"))
                 return new DictionaryInput(propertyInfo.Name);
 
             if (type == typeof(int) || type == typeof(long))

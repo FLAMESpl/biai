@@ -113,6 +113,7 @@
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BIAI.Interface.Columns.ColumnSetting.datasource" />
+    <None Include="Properties\DataSources\BIAI.Interface.Network.Limits.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
