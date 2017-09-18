@@ -47,6 +47,10 @@
             this.labelLearningRate = new System.Windows.Forms.Label();
             this.textBoxLearningDataRatio = new System.Windows.Forms.TextBox();
             this.textBoxLearningRate = new System.Windows.Forms.TextBox();
+            this.labelEpochs = new System.Windows.Forms.Label();
+            this.textBoxEpochs = new System.Windows.Forms.TextBox();
+            this.textBoxHiddenNeurons = new System.Windows.Forms.TextBox();
+            this.labelHiddenNeurons = new System.Windows.Forms.Label();
             this.gridOutputIntervals = new System.Windows.Forms.DataGridView();
             this.lowDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.highDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,8 +69,6 @@
             this.buttonPredict = new System.Windows.Forms.Button();
             this.textBoxPredictOutput = new System.Windows.Forms.TextBox();
             this.inputsGrid = new BIAI.Interface.Prediction.Controls.InputsGrid();
-            this.labelEpochs = new System.Windows.Forms.Label();
-            this.textBoxEpochs = new System.Windows.Forms.TextBox();
             this.tabPagePrediction.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tableLayoutPanelColumns.SuspendLayout();
@@ -105,7 +107,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(405, 235);
+            this.tabPage1.Size = new System.Drawing.Size(373, 404);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Columns";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -122,7 +124,7 @@
             this.tableLayoutPanelColumns.RowCount = 2;
             this.tableLayoutPanelColumns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelColumns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tableLayoutPanelColumns.Size = new System.Drawing.Size(399, 229);
+            this.tableLayoutPanelColumns.Size = new System.Drawing.Size(367, 398);
             this.tableLayoutPanelColumns.TabIndex = 0;
             // 
             // columnsDataGrid
@@ -138,7 +140,7 @@
             this.columnsDataGrid.Location = new System.Drawing.Point(3, 3);
             this.columnsDataGrid.Name = "columnsDataGrid";
             this.columnsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.columnsDataGrid.Size = new System.Drawing.Size(393, 187);
+            this.columnsDataGrid.Size = new System.Drawing.Size(361, 356);
             this.columnsDataGrid.TabIndex = 0;
             // 
             // nameDataGridViewTextBoxColumn
@@ -171,17 +173,17 @@
             this.tableLayoutPanelButtonsColumns.Controls.Add(this.buttonUncheckSelected, 1, 0);
             this.tableLayoutPanelButtonsColumns.Controls.Add(this.buttonNextColumns, 2, 0);
             this.tableLayoutPanelButtonsColumns.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelButtonsColumns.Location = new System.Drawing.Point(3, 196);
+            this.tableLayoutPanelButtonsColumns.Location = new System.Drawing.Point(3, 365);
             this.tableLayoutPanelButtonsColumns.Name = "tableLayoutPanelButtonsColumns";
             this.tableLayoutPanelButtonsColumns.RowCount = 1;
             this.tableLayoutPanelButtonsColumns.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelButtonsColumns.Size = new System.Drawing.Size(393, 30);
+            this.tableLayoutPanelButtonsColumns.Size = new System.Drawing.Size(361, 30);
             this.tableLayoutPanelButtonsColumns.TabIndex = 1;
             // 
             // buttonCheckSelected
             // 
             this.buttonCheckSelected.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonCheckSelected.Location = new System.Drawing.Point(93, 3);
+            this.buttonCheckSelected.Location = new System.Drawing.Point(61, 3);
             this.buttonCheckSelected.Name = "buttonCheckSelected";
             this.buttonCheckSelected.Size = new System.Drawing.Size(105, 24);
             this.buttonCheckSelected.TabIndex = 0;
@@ -192,7 +194,7 @@
             // buttonUncheckSelected
             // 
             this.buttonUncheckSelected.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonUncheckSelected.Location = new System.Drawing.Point(204, 3);
+            this.buttonUncheckSelected.Location = new System.Drawing.Point(172, 3);
             this.buttonUncheckSelected.Name = "buttonUncheckSelected";
             this.buttonUncheckSelected.Size = new System.Drawing.Size(105, 24);
             this.buttonUncheckSelected.TabIndex = 1;
@@ -202,7 +204,7 @@
             // 
             // buttonNextColumns
             // 
-            this.buttonNextColumns.Location = new System.Drawing.Point(315, 3);
+            this.buttonNextColumns.Location = new System.Drawing.Point(283, 3);
             this.buttonNextColumns.Name = "buttonNextColumns";
             this.buttonNextColumns.Size = new System.Drawing.Size(75, 23);
             this.buttonNextColumns.TabIndex = 2;
@@ -232,7 +234,7 @@
             this.tableLayoutPanelNetwork.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelNetwork.Name = "tableLayoutPanelNetwork";
             this.tableLayoutPanelNetwork.RowCount = 3;
-            this.tableLayoutPanelNetwork.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 82F));
+            this.tableLayoutPanelNetwork.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 108F));
             this.tableLayoutPanelNetwork.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelNetwork.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanelNetwork.Size = new System.Drawing.Size(367, 398);
@@ -250,14 +252,17 @@
             this.tableLayoutPanelNeuralNetworkSettings.Controls.Add(this.textBoxLearningRate, 1, 1);
             this.tableLayoutPanelNeuralNetworkSettings.Controls.Add(this.labelEpochs, 0, 2);
             this.tableLayoutPanelNeuralNetworkSettings.Controls.Add(this.textBoxEpochs, 1, 2);
+            this.tableLayoutPanelNeuralNetworkSettings.Controls.Add(this.textBoxHiddenNeurons, 1, 3);
+            this.tableLayoutPanelNeuralNetworkSettings.Controls.Add(this.labelHiddenNeurons, 0, 3);
             this.tableLayoutPanelNeuralNetworkSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelNeuralNetworkSettings.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelNeuralNetworkSettings.Name = "tableLayoutPanelNeuralNetworkSettings";
-            this.tableLayoutPanelNeuralNetworkSettings.RowCount = 3;
-            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanelNeuralNetworkSettings.Size = new System.Drawing.Size(361, 76);
+            this.tableLayoutPanelNeuralNetworkSettings.RowCount = 4;
+            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00062F));
+            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00063F));
+            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00063F));
+            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.99813F));
+            this.tableLayoutPanelNeuralNetworkSettings.Size = new System.Drawing.Size(361, 102);
             this.tableLayoutPanelNeuralNetworkSettings.TabIndex = 2;
             // 
             // labelLearningDataRatio
@@ -300,6 +305,45 @@
             this.textBoxLearningRate.TabIndex = 3;
             this.textBoxLearningRate.Text = "0,001";
             // 
+            // labelEpochs
+            // 
+            this.labelEpochs.AutoSize = true;
+            this.labelEpochs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelEpochs.Location = new System.Drawing.Point(3, 50);
+            this.labelEpochs.Name = "labelEpochs";
+            this.labelEpochs.Size = new System.Drawing.Size(126, 25);
+            this.labelEpochs.TabIndex = 4;
+            this.labelEpochs.Text = "Epochs";
+            this.labelEpochs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxEpochs
+            // 
+            this.textBoxEpochs.Location = new System.Drawing.Point(135, 53);
+            this.textBoxEpochs.Name = "textBoxEpochs";
+            this.textBoxEpochs.Size = new System.Drawing.Size(86, 20);
+            this.textBoxEpochs.TabIndex = 5;
+            this.textBoxEpochs.Text = "1";
+            // 
+            // textBoxHiddenNeurons
+            // 
+            this.textBoxHiddenNeurons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxHiddenNeurons.Location = new System.Drawing.Point(135, 78);
+            this.textBoxHiddenNeurons.Name = "textBoxHiddenNeurons";
+            this.textBoxHiddenNeurons.Size = new System.Drawing.Size(86, 20);
+            this.textBoxHiddenNeurons.TabIndex = 6;
+            this.textBoxHiddenNeurons.Text = "8";
+            // 
+            // labelHiddenNeurons
+            // 
+            this.labelHiddenNeurons.AutoSize = true;
+            this.labelHiddenNeurons.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelHiddenNeurons.Location = new System.Drawing.Point(3, 75);
+            this.labelHiddenNeurons.Name = "labelHiddenNeurons";
+            this.labelHiddenNeurons.Size = new System.Drawing.Size(126, 27);
+            this.labelHiddenNeurons.TabIndex = 7;
+            this.labelHiddenNeurons.Text = "Hidden neurons";
+            this.labelHiddenNeurons.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // gridOutputIntervals
             // 
             this.gridOutputIntervals.AutoGenerateColumns = false;
@@ -309,9 +353,9 @@
             this.highDataGridViewTextBoxColumn});
             this.gridOutputIntervals.DataSource = this.outputIntervalsBindingSource;
             this.gridOutputIntervals.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridOutputIntervals.Location = new System.Drawing.Point(3, 85);
+            this.gridOutputIntervals.Location = new System.Drawing.Point(3, 111);
             this.gridOutputIntervals.Name = "gridOutputIntervals";
-            this.gridOutputIntervals.Size = new System.Drawing.Size(361, 274);
+            this.gridOutputIntervals.Size = new System.Drawing.Size(361, 248);
             this.gridOutputIntervals.TabIndex = 3;
             this.gridOutputIntervals.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.OnOutputIntervalsBindingError);
             // 
@@ -334,8 +378,8 @@
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 312F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 82F));
             this.tableLayoutPanel1.Controls.Add(this.buttonNextNetwork, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.buttonAddInterval, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -349,9 +393,9 @@
             // buttonNextNetwork
             // 
             this.buttonNextNetwork.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonNextNetwork.Location = new System.Drawing.Point(315, 3);
+            this.buttonNextNetwork.Location = new System.Drawing.Point(283, 3);
             this.buttonNextNetwork.Name = "buttonNextNetwork";
-            this.buttonNextNetwork.Size = new System.Drawing.Size(43, 24);
+            this.buttonNextNetwork.Size = new System.Drawing.Size(75, 24);
             this.buttonNextNetwork.TabIndex = 1;
             this.buttonNextNetwork.Text = "Next";
             this.buttonNextNetwork.UseVisualStyleBackColor = true;
@@ -360,7 +404,7 @@
             // buttonAddInterval
             // 
             this.buttonAddInterval.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonAddInterval.Location = new System.Drawing.Point(234, 3);
+            this.buttonAddInterval.Location = new System.Drawing.Point(201, 3);
             this.buttonAddInterval.Name = "buttonAddInterval";
             this.buttonAddInterval.Size = new System.Drawing.Size(75, 24);
             this.buttonAddInterval.TabIndex = 2;
@@ -374,7 +418,7 @@
             this.tabPageTraining.Location = new System.Drawing.Point(4, 22);
             this.tabPageTraining.Name = "tabPageTraining";
             this.tabPageTraining.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageTraining.Size = new System.Drawing.Size(405, 235);
+            this.tabPageTraining.Size = new System.Drawing.Size(373, 404);
             this.tabPageTraining.TabIndex = 2;
             this.tabPageTraining.Text = "Training";
             this.tabPageTraining.UseVisualStyleBackColor = true;
@@ -391,7 +435,7 @@
             this.tableLayoutPanelTraining.RowCount = 2;
             this.tableLayoutPanelTraining.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelTraining.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
-            this.tableLayoutPanelTraining.Size = new System.Drawing.Size(399, 229);
+            this.tableLayoutPanelTraining.Size = new System.Drawing.Size(367, 398);
             this.tableLayoutPanelTraining.TabIndex = 1;
             // 
             // tableLayoutPanelButtons
@@ -402,17 +446,17 @@
             this.tableLayoutPanelButtons.Controls.Add(this.buttonNextTraining, 0, 0);
             this.tableLayoutPanelButtons.Controls.Add(this.buttonStart, 0, 0);
             this.tableLayoutPanelButtons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanelButtons.Location = new System.Drawing.Point(3, 196);
+            this.tableLayoutPanelButtons.Location = new System.Drawing.Point(3, 365);
             this.tableLayoutPanelButtons.Name = "tableLayoutPanelButtons";
             this.tableLayoutPanelButtons.RowCount = 1;
             this.tableLayoutPanelButtons.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelButtons.Size = new System.Drawing.Size(393, 30);
+            this.tableLayoutPanelButtons.Size = new System.Drawing.Size(361, 30);
             this.tableLayoutPanelButtons.TabIndex = 0;
             // 
             // buttonNextTraining
             // 
             this.buttonNextTraining.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonNextTraining.Location = new System.Drawing.Point(315, 3);
+            this.buttonNextTraining.Location = new System.Drawing.Point(283, 3);
             this.buttonNextTraining.Name = "buttonNextTraining";
             this.buttonNextTraining.Size = new System.Drawing.Size(75, 24);
             this.buttonNextTraining.TabIndex = 3;
@@ -423,7 +467,7 @@
             // buttonStart
             // 
             this.buttonStart.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonStart.Location = new System.Drawing.Point(234, 3);
+            this.buttonStart.Location = new System.Drawing.Point(202, 3);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(75, 24);
             this.buttonStart.TabIndex = 2;
@@ -439,7 +483,7 @@
             this.textBoxTrainingOutput.Name = "textBoxTrainingOutput";
             this.textBoxTrainingOutput.ReadOnly = true;
             this.textBoxTrainingOutput.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxTrainingOutput.Size = new System.Drawing.Size(393, 187);
+            this.textBoxTrainingOutput.Size = new System.Drawing.Size(361, 356);
             this.textBoxTrainingOutput.TabIndex = 1;
             // 
             // tabPage3
@@ -501,25 +545,6 @@
             this.inputsGrid.Name = "inputsGrid";
             this.inputsGrid.Size = new System.Drawing.Size(361, 192);
             this.inputsGrid.TabIndex = 2;
-            // 
-            // labelEpochs
-            // 
-            this.labelEpochs.AutoSize = true;
-            this.labelEpochs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelEpochs.Location = new System.Drawing.Point(3, 50);
-            this.labelEpochs.Name = "labelEpochs";
-            this.labelEpochs.Size = new System.Drawing.Size(126, 26);
-            this.labelEpochs.TabIndex = 4;
-            this.labelEpochs.Text = "Epochs";
-            this.labelEpochs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // textBoxEpochs
-            // 
-            this.textBoxEpochs.Location = new System.Drawing.Point(135, 53);
-            this.textBoxEpochs.Name = "textBoxEpochs";
-            this.textBoxEpochs.Size = new System.Drawing.Size(86, 20);
-            this.textBoxEpochs.TabIndex = 5;
-            this.textBoxEpochs.Text = "1";
             // 
             // Form
             // 
@@ -594,6 +619,8 @@
         private System.Windows.Forms.Button buttonAddInterval;
         private System.Windows.Forms.Label labelEpochs;
         private System.Windows.Forms.TextBox textBoxEpochs;
+        private System.Windows.Forms.TextBox textBoxHiddenNeurons;
+        private System.Windows.Forms.Label labelHiddenNeurons;
     }
 }
 

@@ -56,6 +56,7 @@ namespace BIAI.Network
                 order[i] = i;
 
             var learningDataCount = (int)Math.Floor(trainingDataSets.Count * learningDataPercentage);
+            var testingDataCount = trainingDataSets.Count - learningDataCount;
 
             for (int epoch = 0; epoch < epochs; epoch++)
             {
@@ -78,6 +79,7 @@ namespace BIAI.Network
                 }
 
                 var totalCorrect = 0;
+                var totalError = 0d;
                 for (int i = learningDataCount; i < trainingDataSets.Count; i++)
                 {
                     var index = order[i];
@@ -85,10 +87,17 @@ namespace BIAI.Network
 
                     if (outcome.MaxIndex() == trainingDataSets[index].Outputs.MaxIndex())
                         totalCorrect++;
-                }
 
-                var accuracy = (double)totalCorrect / (trainingDataSets.Count - learningDataCount);
-                TrainingEpochCompleted?.Invoke(this, new TrainingEpochCompletedEventArgs(epoch, accuracy));
+                    for (int j = 0; j < OutputLayer.Neurons.Length; j++)
+                    {
+                        var error = trainingDataSets[index].Outputs[j] - outcome[j];
+                        totalError += error * error;
+                    }
+                }
+                
+                var accuracy = (double)totalCorrect / testingDataCount;
+                var meanSquareError = totalError / testingDataCount;
+                TrainingEpochCompleted?.Invoke(this, new TrainingEpochCompletedEventArgs(epoch, accuracy, meanSquareError));
             }
         }
 

@@ -29,11 +29,11 @@ namespace BIAI.Interface.Network
         public IReadOnlyList<ColumnSetting> Columns { get; }
 
         public NeuralNetworkService(IEnumerable<ColumnSetting> columnSettings, Logger trainingLogger, Logger predictingLogger, 
-            IEnumerable<Limits> outputIntervals, double learningRate, double learningDataRatio, int epochs)
+            IEnumerable<Limits> outputIntervals, double learningRate, double learningDataRatio, int epochs, int hiddenNeurons)
         {
             this.outputIntervals = outputIntervals.ToArray();
             Columns = columnSettings.Where(x => x.Selected).ToList();
-            network = new NeuralNetwork(Columns.Count, (Columns.Count + this.outputIntervals.Length) / 2, this.outputIntervals.Length);
+            network = new NeuralNetwork(Columns.Count, hiddenNeurons, this.outputIntervals.Length);
             this.trainingLogger = trainingLogger;
             this.predictingLogger = predictingLogger;
             this.learningRate = learningRate;
@@ -163,7 +163,7 @@ namespace BIAI.Interface.Network
 
         private void OnTrainingEpochComplete(object sender, TrainingEpochCompletedEventArgs e)
         {
-            trainingLogger.Message($"Epoch {e.Epoch}, Accuracy {e.Accuracy}");
+            trainingLogger.Message($"Epoch {e.Epoch}, Accuracy {e.Accuracy}, MSE {e.MeanSquareError}");
         }
     }
 }

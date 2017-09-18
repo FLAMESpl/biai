@@ -54,6 +54,13 @@ namespace BIAI.Interface
                 double learningRate;
                 double learningDataRatio;
                 int epochs;
+                int hiddenNeurons;
+
+                if (!Int32.TryParse(textBoxHiddenNeurons.Text, out hiddenNeurons))
+                {
+                    ShowError("Could not parse hidden neurons value.");
+                    return;
+                }
 
                 if (!Double.TryParse(textBoxLearningRate.Text, out learningRate))
                 {
@@ -90,7 +97,8 @@ namespace BIAI.Interface
                     outputIntervals: intervals,
                     learningRate: learningRate, 
                     learningDataRatio: learningDataRatio,
-                    epochs: epochs);
+                    epochs: epochs,
+                    hiddenNeurons: hiddenNeurons);
 
                 neuralNetworkService.TrainingCompleted += OnNetworkTrainingComplete;
                 neuralNetworkService.PredictionCompleted += OnPredictionComplete;
@@ -175,6 +183,7 @@ namespace BIAI.Interface
                 return;
             }
             control.Text = text;
+            control.SelectionStart = control.TextLength;
             control.ScrollToCaret();
         }
 
