@@ -58,6 +58,10 @@
     <Compile Include="Migrations\201708271142491_Initial.Designer.cs">
       <DependentUpon>201708271142491_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201709181452192_AddDictionaryAnnotations.cs" />
+    <Compile Include="Migrations\201709181452192_AddDictionaryAnnotations.Designer.cs">
+      <DependentUpon>201709181452192_AddDictionaryAnnotations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Annotations\Dictionary.cs" />
     <Compile Include="Model\AttackRecord.cs" />
@@ -81,6 +85,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201708271142491_Initial.resx">
       <DependentUpon>201708271142491_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201709181452192_AddDictionaryAnnotations.resx">
+      <DependentUpon>201709181452192_AddDictionaryAnnotations.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

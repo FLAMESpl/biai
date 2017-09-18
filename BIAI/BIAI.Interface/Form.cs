@@ -53,6 +53,7 @@ namespace BIAI.Interface
             {
                 double learningRate;
                 double learningDataRatio;
+                int epochs;
 
                 if (!Double.TryParse(textBoxLearningRate.Text, out learningRate))
                 {
@@ -63,6 +64,12 @@ namespace BIAI.Interface
                 if (!Double.TryParse(textBoxLearningDataRatio.Text, out learningDataRatio))
                 {
                     ShowError("Could not parse learning data ratio value.");
+                    return;
+                }
+
+                if (!Int32.TryParse(textBoxEpochs.Text, out epochs))
+                {
+                    ShowError("Could not parse peochs value.");
                     return;
                 }
 
@@ -82,7 +89,8 @@ namespace BIAI.Interface
                     predictingLogger: predictionLogger,
                     outputIntervals: intervals,
                     learningRate: learningRate, 
-                    learningDataRatio: learningDataRatio);
+                    learningDataRatio: learningDataRatio,
+                    epochs: epochs);
 
                 neuralNetworkService.TrainingCompleted += OnNetworkTrainingComplete;
                 neuralNetworkService.PredictionCompleted += OnPredictionComplete;
@@ -159,14 +167,15 @@ namespace BIAI.Interface
             ShowError("Interval output limit must be an empty or integral value.");
         }
 
-        private void SetText(string text, Control control)
+        private void SetText(string text, TextBox control)
         {
             if (InvokeRequired)
             {
-                Invoke((Action<string, Control>)SetText, text, control);
+                Invoke((Action<string, TextBox>)SetText, text, control);
                 return;
             }
             control.Text = text;
+            control.ScrollToCaret();
         }
 
         private void UpdatePredictionGrid(InputsGrid inputsGrid)
@@ -193,8 +202,8 @@ namespace BIAI.Interface
                     return false;
                 }
 
-                if (limitsSoFar.Any(x => (x.High == null || limits.Low == null || x.High > limits.Low) 
-                                    && (x.Low == null || limits.High == null || x.Low < limits.High)))
+                if (limitsSoFar.Any(x => (x.High == null || limits.Low == null || x.High >= limits.Low) 
+                                    && (x.Low == null || limits.High == null || x.Low <= limits.High)))
                 {
                     ShowError("Output intervals are overlapping.");
                     return false;

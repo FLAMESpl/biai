@@ -1,23 +1,23 @@
-﻿using System;
+﻿using BIAI.Network.Events;
+using System;
 using System.Collections.Generic;
 
 namespace BIAI.Network
 {
     public class NeuralNetwork
     {
+        public event EventHandler<TrainingEpochCompletedEventArgs> TrainingEpochCompleted;
+
         private NeuronLayer[] neuronLayers = new NeuronLayer[3];
+        private Random random = new Random();
 
         public NeuronLayer InputLayer => neuronLayers[0];
         public NeuronLayer HiddenLayer => neuronLayers[1];
         public NeuronLayer OutputLayer => neuronLayers[2];
         public IReadOnlyList<NeuronLayer> NeuronLayers { get; private set; }
 
-        public double Accuracy { get; private set; }
-
         public NeuralNetwork(int inputLayerNeuronsCount, int hiddenLayerNeuronsCount, int outputLayerNeuronsCount)
         {
-            //System.Diagnostics.Debugger.Break();
-
             neuronLayers[0] = new NeuronLayer(inputLayerNeuronsCount);
             neuronLayers[1] = new NeuronLayer(hiddenLayerNeuronsCount, InputLayer);
             neuronLayers[2] = new NeuronLayer(outputLayerNeuronsCount, HiddenLayer);
@@ -37,7 +37,7 @@ namespace BIAI.Network
             return OutputLayer.GetValues();
         }
 
-        public void Train(IReadOnlyList<TrainingDataSet> trainingDataSets, double learningRate, double learningDataPercentage)
+        public void Train(IReadOnlyList<TrainingDataSet> trainingDataSets, double learningRate, double learningDataPercentage, int epochs)
         {
             if (learningDataPercentage > 1 || learningDataPercentage < 0)
                 throw new ArgumentException("Percentage of training data must be a value between 0 and 1.", nameof(learningDataPercentage));
@@ -51,34 +51,56 @@ namespace BIAI.Network
                     throw new ArgumentException($"Data set's number of output values ({dataSet.Outputs.Length}) does not match size of output layer ({OutputLayer.Neurons.Length})", nameof(trainingDataSets));
             }
             
+            var order = new int[trainingDataSets.Count];
+            for (int i = 0; i < order.Length; i++)
+                order[i] = i;
+
             var learningDataCount = (int)Math.Floor(trainingDataSets.Count * learningDataPercentage);
 
-            for (int i = 0; i < learningDataCount; i++)
+            for (int epoch = 0; epoch < epochs; epoch++)
             {
-                InputLayer.InsertValues(trainingDataSets[i].Inputs);
-                HiddenLayer.Compute();
-                OutputLayer.Compute();
+                Shuffle(order);
 
-                OutputLayer.ComputeDelta(trainingDataSets[i].Outputs);
-                HiddenLayer.ComputeDelta();
-                InputLayer.ComputeDelta();
-
-                HiddenLayer.UpdateWeights(learningRate);
-                OutputLayer.UpdateWeights(learningRate);
-            } 
-
-            var total = 0d;
-            for (int i = learningDataCount; i < trainingDataSets.Count; i++)
-            {
-                var outcome = Predict(trainingDataSets[i].Inputs);
-
-                for (int j = 0; j < outcome.Length; j++)
+                for (int i = 0; i < learningDataCount; i++)
                 {
-                    total += Math.Abs(trainingDataSets[i].Outputs[j] + outcome[j]) / 2;
-                }
-            }
+                    var index = order[i];
 
-            Accuracy = total / ((trainingDataSets.Count - learningDataCount) * OutputLayer.Neurons.Length);
+                    InputLayer.InsertValues(trainingDataSets[index].Inputs);
+                    HiddenLayer.Compute();
+                    OutputLayer.Compute();
+
+                    OutputLayer.ComputeDelta(trainingDataSets[index].Outputs);
+                    HiddenLayer.ComputeDelta();
+                    InputLayer.ComputeDelta();
+
+                    HiddenLayer.UpdateWeights(learningRate);
+                    OutputLayer.UpdateWeights(learningRate);
+                }
+
+                var totalCorrect = 0;
+                for (int i = learningDataCount; i < trainingDataSets.Count; i++)
+                {
+                    var index = order[i];
+                    var outcome = Predict(trainingDataSets[index].Inputs);
+
+                    if (outcome.MaxIndex() == trainingDataSets[index].Outputs.MaxIndex())
+                        totalCorrect++;
+                }
+
+                var accuracy = (double)totalCorrect / (trainingDataSets.Count - learningDataCount);
+                TrainingEpochCompleted?.Invoke(this, new TrainingEpochCompletedEventArgs(epoch, accuracy));
+            }
+        }
+
+        private void Shuffle(int[] order)
+        {
+            for (int i = 0; i < order.Length; i++)
+            {
+                int r = random.Next(i, order.Length);
+                int tmp = order[r];
+                order[r] = order[i];
+                order[i] = tmp;
+            }
         }
     }
 }

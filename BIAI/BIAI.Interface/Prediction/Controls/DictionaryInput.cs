@@ -1,11 +1,8 @@
 ﻿using BIAI.Data;
 using BIAI.Data.Model;
 using BIAI.Data.Model.Annotations;
-using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
-using System.Reflection;
 using System.Windows.Forms;
 
 namespace BIAI.Interface.Prediction.Controls
@@ -26,10 +23,8 @@ namespace BIAI.Interface.Prediction.Controls
 
             using (var db = new GlobalTerrorismContext())
             {
-                var type = typeof(ISystemDictionary).Assembly.GetType($"BIAI.Data.Model.{DictionaryName}");
-                var tableName = typeof(GlobalTerrorismContext).GetProperties().Single(x => CheckForDbSet(x, type)).Name;
-
-                foreach (var entry in db.Set(type).SqlQuery($"SELECT * FROM {tableName}").Cast<ISystemDictionary>())
+                var query = db.Set(dictionaryData.Type).SqlQuery($"SELECT * FROM {dictionaryData.TableName}");
+                foreach (var entry in query.Cast<ISystemDictionary>())
                 {
                     var ind = Items.Add(entry.Name);
                     dictionaryMapping.Add(ind, entry.Id);
@@ -40,12 +35,6 @@ namespace BIAI.Interface.Prediction.Controls
         public object GetInputValue()
         {
             return dictionaryMapping[SelectedIndex];
-        }
-
-        private bool CheckForDbSet(PropertyInfo propertyInfo, Type type)
-        {
-            var generic = propertyInfo.PropertyType.GetGenericArguments().SingleOrDefault();
-            return generic == null ? false : generic == type;
         }
     }
 }

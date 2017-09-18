@@ -13,10 +13,10 @@ namespace BIAI.Data.Model
         public long Day { get; private set; }
         public bool? Extended24Hours { get; private set; }
 
-        [Dictionary("Countries")]
+        [Dictionary("Countries", typeof(Country))]
         public long? CountryId { get; private set; }
 
-        [Dictionary("Regions")]
+        [Dictionary("Regions", typeof(Region))]
         public long? RegionId { get; private set; }
         public string Latitude { get; private set; }
         public string Longitude { get; private set; }
@@ -32,10 +32,10 @@ namespace BIAI.Data.Model
         public bool? WasSuicidalAttack { get; private set; }
         public AttackType AttackType { get; private set; }
 
-        [Dictionary("TargetTypes")]
+        [Dictionary("TargetTypes", typeof(TargetType))]
         public long? TargetTypeId { get; private set; }
 
-        [Dictionary("TargetSubtypes")]
+        [Dictionary("TargetSubtypes", typeof(TargetSubtype))]
         public long? TargetSubTypeId { get; private set; }
         public bool? OrganizationNameDeduced { get; private set; }
         public bool? WasIndividualAttack { get; private set; }
@@ -44,7 +44,7 @@ namespace BIAI.Data.Model
         public ClaimMode? ClaimMode { get; private set; }
         public DoubtBoolean? WasClaimCompeting { get; private set; }
 
-        [Dictionary("Weapons")]
+        [Dictionary("Weapons", typeof(Weapon))]
         public long? WeaponTypeId { get; private set; }
         public long Fatalities { get; private set; }
         public long? USCitizensKilled { get; private set; }

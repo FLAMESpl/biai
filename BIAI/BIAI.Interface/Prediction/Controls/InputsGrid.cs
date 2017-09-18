@@ -4,6 +4,7 @@ using BIAI.Interface.Columns;
 using System.Reflection;
 using System.Linq;
 using System;
+using BIAI.Data.Model.Annotations;
 
 namespace BIAI.Interface.Prediction.Controls
 {
@@ -64,8 +65,9 @@ namespace BIAI.Interface.Prediction.Controls
             if (!nullable)
                 type = propertyInfo.PropertyType;
 
-            if (propertyInfo.Name.Length != 2 && propertyInfo.Name.EndsWith("Id"))
-                return new DictionaryInput(propertyInfo.Name);
+            var dictionaryData = propertyInfo.GetCustomAttribute<Dictionary>();
+            if (dictionaryData != null)
+                return new DictionaryInput(propertyInfo.Name, dictionaryData);
 
             if (type == typeof(int) || type == typeof(long))
                 return new NumberInput(propertyInfo.Name);

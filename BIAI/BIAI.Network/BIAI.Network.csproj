@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bias.cs" />
+    <Compile Include="Events\TrainingEpochCompletedEventArgs.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="NeuralNetwork.cs" />
     <Compile Include="Neuron.cs" />

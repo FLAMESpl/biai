@@ -2,6 +2,7 @@
 using BIAI.Interface.Columns;
 using BIAI.Interface.Logging;
 using BIAI.Network;
+using BIAI.Network.Events;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.SqlServer;
@@ -23,19 +24,23 @@ namespace BIAI.Interface.Network
         private List<InputInitializer> initializers;
         private double learningRate;
         private double learningDataRatio;
+        private int epochs;
 
         public IReadOnlyList<ColumnSetting> Columns { get; }
 
         public NeuralNetworkService(IEnumerable<ColumnSetting> columnSettings, Logger trainingLogger, Logger predictingLogger, 
-            IEnumerable<Limits> outputIntervals, double learningRate, double learningDataRatio)
+            IEnumerable<Limits> outputIntervals, double learningRate, double learningDataRatio, int epochs)
         {
             this.outputIntervals = outputIntervals.ToArray();
             Columns = columnSettings.Where(x => x.Selected).ToList();
-            network = new NeuralNetwork(Columns.Count, Columns.Count, this.outputIntervals.Length);
+            network = new NeuralNetwork(Columns.Count, (Columns.Count + this.outputIntervals.Length) / 2, this.outputIntervals.Length);
             this.trainingLogger = trainingLogger;
             this.predictingLogger = predictingLogger;
             this.learningRate = learningRate;
             this.learningDataRatio = learningDataRatio;
+            this.epochs = epochs;
+
+            network.TrainingEpochCompleted += OnTrainingEpochComplete;
         }
 
         public void Start()
@@ -102,11 +107,11 @@ namespace BIAI.Interface.Network
             network.Train(
                 trainingDataSets: dataSets,
                 learningRate: learningRate,
-                learningDataPercentage: learningDataRatio
+                learningDataPercentage: learningDataRatio,
+                epochs: epochs
             );
 
             trainingLogger.Message("Finished");
-            trainingLogger.Message($"Training accuracy: {network.Accuracy}");
             TrainingCompleted?.Invoke(this, ProcessResult.Success);
         }
 
@@ -131,7 +136,13 @@ namespace BIAI.Interface.Network
             predictingLogger.Message("Starting prediction.");
             var result = network.Predict(normalizedInputs);
 
-            predictingLogger.Message($"Finished with result {FormatOutput(result)}.");
+            predictingLogger.Message($"Finished with results:");
+
+            foreach (var output in result)
+            {
+                predictingLogger.Message(output.ToString());
+            }
+
             PredictionCompleted?.Invoke(this, ProcessResult.Success);
         }
 
@@ -150,9 +161,9 @@ namespace BIAI.Interface.Network
             return outputs;
         }
 
-        private string FormatOutput(double[] outputs)
+        private void OnTrainingEpochComplete(object sender, TrainingEpochCompletedEventArgs e)
         {
-            return $"{{{String.Join(";", outputs.Select(x => x.ToString()))}}}";
+            trainingLogger.Message($"Epoch {e.Epoch}, Accuracy {e.Accuracy}");
         }
     }
 }

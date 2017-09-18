@@ -1,4 +1,5 @@
 ﻿using BIAI.Data.Model;
+using System;
 using System.Data.Entity;
 
 namespace BIAI.Data
@@ -14,6 +15,7 @@ namespace BIAI.Data
 
         public GlobalTerrorismContext() : base("GlobalTerrorism")
         {
+            Database.Log = Console.Write;
         }
     }
 }

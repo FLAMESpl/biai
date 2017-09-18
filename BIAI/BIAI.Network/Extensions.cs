@@ -14,5 +14,23 @@ namespace BIAI.Network
         public static double Normalize(this int value, int min, int max) => (double)(value - min) / (max - min);
 
         public static double Normalize(this long value, long min, long max) => (double)(value - min) / (max - min);
+
+        public static int MaxIndex<T>(this IEnumerable<T> sequence) where T : IComparable<T>
+        {
+            var maxIndex = -1;
+            var maxValue = default(T);
+
+            var index = 0;
+            foreach (var value in sequence)
+            {
+                if (value.CompareTo(maxValue) > 0 || maxIndex == -1)
+                {
+                    maxIndex = index;
+                    maxValue = value;
+                }
+                index++;
+            }
+            return maxIndex;
+        }
     }
 }
