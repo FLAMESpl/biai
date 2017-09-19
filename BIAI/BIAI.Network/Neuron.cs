@@ -12,10 +12,13 @@ namespace BIAI.Network
         public double Delta { get; set; }
         public double Value { get; set; }
 
+        private Dictionary<INeuron, double> lastWeightUpdates { get; } = new Dictionary<INeuron, double>();
+
         public void AddActivator(INeuron neuron, double weigth)
         {
             Activators.Add(neuron, weigth);
             neuron.Outputs.Add(this, weigth);
+            lastWeightUpdates.Add(neuron, 0);
         }
 
         public void Compute()
@@ -43,13 +46,14 @@ namespace BIAI.Network
             Delta = (expectedValue - Value) * Value * (1 - Value);
         }
 
-        public void UpdateWeigths(double learningRate)
+        public void UpdateWeigths(double learningRate, double weightDecay, double momentum)
         {
             foreach (var activator in Activators.Keys.ToList())
             {
-                var weigthDelta = learningRate * Delta * activator.Value;
-                Activators[activator] += weigthDelta;
-                activator.Outputs[this] += weigthDelta;
+                var weightDelta = learningRate * (activator.Value * Delta  - weightDecay * Activators[activator]) + lastWeightUpdates[activator] * momentum;
+                lastWeightUpdates[activator] = weightDelta;
+                Activators[activator] += weightDelta;
+                activator.Outputs[this] += weightDelta;
             }
         }
     }

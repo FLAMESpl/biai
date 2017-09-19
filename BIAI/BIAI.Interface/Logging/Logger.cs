@@ -21,17 +21,6 @@ namespace BIAI.Interface.Logging
             Update();
         }
 
-        public void Progress(string message)
-        {
-            lastMessage = message;
-            Update();
-        }
-
-        public void Finish()
-        {
-            Message(lastMessage);
-        }
-
         private void Update()
         {
             outputTarget.Invoke($"{text}{lastMessage}");

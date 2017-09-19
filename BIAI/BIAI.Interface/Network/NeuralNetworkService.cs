@@ -19,26 +19,33 @@ namespace BIAI.Interface.Network
 
         private NeuralNetwork network;
         private Logger trainingLogger;
-        private Logger predictingLogger;
+        private Logger predictionLogger;
         private Limits[] outputIntervals;
         private List<InputInitializer> initializers;
         private double learningRate;
         private double learningDataRatio;
+        private double weightDecay;
+        private double momentum;
         private int epochs;
+        private int? rowLimit;
 
         public IReadOnlyList<ColumnSetting> Columns { get; }
 
         public NeuralNetworkService(IEnumerable<ColumnSetting> columnSettings, Logger trainingLogger, Logger predictingLogger, 
-            IEnumerable<Limits> outputIntervals, double learningRate, double learningDataRatio, int epochs, int hiddenNeurons)
+            IEnumerable<Limits> outputIntervals, double learningRate, double learningDataRatio, double weightDecay, double momentum,
+            int epochs, int hiddenNeurons, int? rowLimit)
         {
             this.outputIntervals = outputIntervals.ToArray();
             Columns = columnSettings.Where(x => x.Selected).ToList();
             network = new NeuralNetwork(Columns.Count, hiddenNeurons, this.outputIntervals.Length);
             this.trainingLogger = trainingLogger;
-            this.predictingLogger = predictingLogger;
+            this.predictionLogger = predictingLogger;
             this.learningRate = learningRate;
             this.learningDataRatio = learningDataRatio;
             this.epochs = epochs;
+            this.rowLimit = rowLimit;
+            this.weightDecay = weightDecay;
+            this.momentum = momentum;
 
             network.TrainingEpochCompleted += OnTrainingEpochComplete;
         }
@@ -71,13 +78,10 @@ namespace BIAI.Interface.Network
                     {
                         initializer.UpdateLimits(attackRecords[i]);
                     }
-
-                    //log.Progress($"Normalizing data: {(float)i / count * 100}%");
                 }
 
                 trainingLogger.Message("Creating data sets");
-                //log.Finish();
-
+                
                 for (int i = 0; i < count; i++)
                 {
                     var inputs = initializers.Select(x => x.TryGetValue(attackRecords[i]));
@@ -93,39 +97,41 @@ namespace BIAI.Interface.Network
                         Outputs = CreateOutput(attackRecords[i].Fatalities)
                     };
 
-                    //log.Progress($"Creating data sets: {(float)i / count * 100}%");
-
                     dataSets.Add(dataSet);
+                    if (rowLimit.HasValue && dataSets.Count == rowLimit)
+                        break;
                 }
-
-                //log.Finish();
-                trainingLogger.Message($"{nulls} records skipped as they contains nulls.");
+                
+                trainingLogger.Message($"{nulls} records skipped as they contained nulls");
+                trainingLogger.Message($"Took {dataSets.Count} rows");
             }
 
             trainingLogger.Message("Training started");
 
-            network.Train(
+            var completed = network.Train(
                 trainingDataSets: dataSets,
                 learningRate: learningRate,
+                weightDecay: weightDecay,
                 learningDataPercentage: learningDataRatio,
-                epochs: epochs
+                epochs: epochs,
+                momentum: momentum
             );
 
-            trainingLogger.Message("Finished");
-            TrainingCompleted?.Invoke(this, ProcessResult.Success);
+            trainingLogger.Message(completed ? "Finished" : "Stopped");
+            TrainingCompleted?.Invoke(this, completed ? ProcessResult.Success : ProcessResult.Failure);
         }
 
         public void Predict(object[] inputs)
         {
-            predictingLogger.Message($"{BELT}{DateTime.Now.TimeOfDay}{BELT}");
-            predictingLogger.Message("Normalizing inputs.");
+            predictionLogger.Message($"{BELT}{DateTime.Now.TimeOfDay}{BELT}");
+            predictionLogger.Message("Normalizing inputs.");
 
             double[] normalizedInputs = new double[inputs.Length];
             for (int i = 0; i < inputs.Length; i++)
             {
                 if (inputs[i] == null)
                 {
-                    predictingLogger.Message("Aborted. Value set contains null.");
+                    predictionLogger.Message("Aborted. Value set contains null.");
                     PredictionCompleted?.Invoke(this, ProcessResult.Failure);
                     return;
                 };
@@ -133,17 +139,23 @@ namespace BIAI.Interface.Network
                 normalizedInputs[i] = initializers[i].TryGetValue(inputs[i]).Value;
             }
 
-            predictingLogger.Message("Starting prediction.");
+            predictionLogger.Message("Starting prediction.");
             var result = network.Predict(normalizedInputs);
 
-            predictingLogger.Message($"Finished with results:");
+            predictionLogger.Message($"Finished with results:");
 
             foreach (var output in result)
             {
-                predictingLogger.Message(output.ToString());
+                predictionLogger.Message(output.ToString());
             }
 
             PredictionCompleted?.Invoke(this, ProcessResult.Success);
+        }
+
+        public void StopTraining()
+        {
+            trainingLogger.Message("Aborting...");
+            network.Stop();
         }
 
         private double[] CreateOutput(long fatalities)

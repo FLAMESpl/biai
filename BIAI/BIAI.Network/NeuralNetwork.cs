@@ -1,6 +1,7 @@
 ﻿using BIAI.Network.Events;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace BIAI.Network
 {
@@ -10,6 +11,7 @@ namespace BIAI.Network
 
         private NeuronLayer[] neuronLayers = new NeuronLayer[3];
         private Random random = new Random();
+        private bool stopRequested = false;
 
         public NeuronLayer InputLayer => neuronLayers[0];
         public NeuronLayer HiddenLayer => neuronLayers[1];
@@ -25,6 +27,8 @@ namespace BIAI.Network
             NeuronLayers = Array.AsReadOnly(neuronLayers);
         }
 
+        public void Stop() => stopRequested = true;
+
         public double[] Predict(double[] values)
         {
             if (values.Length != InputLayer.Neurons.Length)
@@ -37,7 +41,8 @@ namespace BIAI.Network
             return OutputLayer.GetValues();
         }
 
-        public void Train(IReadOnlyList<TrainingDataSet> trainingDataSets, double learningRate, double learningDataPercentage, int epochs)
+        public bool Train(IReadOnlyList<TrainingDataSet> trainingDataSets, double learningRate, double weightDecay, double momentum,
+            double learningDataPercentage, int epochs)
         {
             if (learningDataPercentage > 1 || learningDataPercentage < 0)
                 throw new ArgumentException("Percentage of training data must be a value between 0 and 1.", nameof(learningDataPercentage));
@@ -74,8 +79,8 @@ namespace BIAI.Network
                     HiddenLayer.ComputeDelta();
                     InputLayer.ComputeDelta();
 
-                    HiddenLayer.UpdateWeights(learningRate);
-                    OutputLayer.UpdateWeights(learningRate);
+                    HiddenLayer.UpdateWeights(learningRate, weightDecay, momentum);
+                    OutputLayer.UpdateWeights(learningRate, weightDecay, momentum);
                 }
 
                 var totalCorrect = 0;
@@ -94,11 +99,16 @@ namespace BIAI.Network
                         totalError += error * error;
                     }
                 }
-                
+
                 var accuracy = (double)totalCorrect / testingDataCount;
-                var meanSquareError = totalError / testingDataCount;
+                var meanSquareError = totalError / (testingDataCount * OutputLayer.Neurons.Count());
+
                 TrainingEpochCompleted?.Invoke(this, new TrainingEpochCompletedEventArgs(epoch, accuracy, meanSquareError));
+                if (stopRequested)
+                    return false;
             }
+
+            return true;
         }
 
         private void Shuffle(int[] order)

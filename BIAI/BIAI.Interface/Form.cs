@@ -53,12 +53,34 @@ namespace BIAI.Interface
             {
                 double learningRate;
                 double learningDataRatio;
+                double weightDecay;
+                double momentum;
                 int epochs;
                 int hiddenNeurons;
+                int rowLimit = 0;
+
+                bool rowLimitPresent = !String.IsNullOrWhiteSpace(textBoxRowLimit.Text);
+                if (rowLimitPresent && !Int32.TryParse(textBoxRowLimit.Text, out rowLimit))
+                {
+                    ShowError("Row limit must be integral number.");
+                    return;
+                }
 
                 if (!Int32.TryParse(textBoxHiddenNeurons.Text, out hiddenNeurons))
                 {
                     ShowError("Could not parse hidden neurons value.");
+                    return;
+                }
+
+                if (!Double.TryParse(textBoxWeightDecay.Text, out weightDecay))
+                {
+                    ShowError("Could not parse weigth decay value.");
+                    return;
+                }
+
+                if (!Double.TryParse(textBoxMomentum.Text, out momentum))
+                {
+                    ShowError("Could not parse momentum value.");
                     return;
                 }
 
@@ -90,15 +112,18 @@ namespace BIAI.Interface
                 if (!ValidateLimits(intervals))
                     return;
                 
-                var neuralNetworkService = new NeuralNetworkService(
+                neuralNetworkService = new NeuralNetworkService(
                     columnSettings: columnsBindingSource.List.Cast<ColumnSetting>(),
                     trainingLogger: trainingLogger,
                     predictingLogger: predictionLogger,
                     outputIntervals: intervals,
                     learningRate: learningRate, 
                     learningDataRatio: learningDataRatio,
+                    weightDecay: weightDecay,
+                    momentum: momentum,
                     epochs: epochs,
-                    hiddenNeurons: hiddenNeurons);
+                    hiddenNeurons: hiddenNeurons,
+                    rowLimit: rowLimitPresent ? rowLimit : (int?)null);
 
                 neuralNetworkService.TrainingCompleted += OnNetworkTrainingComplete;
                 neuralNetworkService.PredictionCompleted += OnPredictionComplete;
@@ -168,6 +193,12 @@ namespace BIAI.Interface
         private void OnClickAddInterval(object sender, EventArgs e)
         {
             outputIntervalsBindingSource.Add(new Limits(null, null));
+        }
+
+        private void OnClickStop(object sender, EventArgs e)
+        {
+            if (neuralNetworkService != null && trainingInProgress)
+                neuralNetworkService.StopTraining();
         }
 
         private void OnOutputIntervalsBindingError(object sender, DataGridViewDataErrorEventArgs e)

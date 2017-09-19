@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPagePrediction = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelColumns = new System.Windows.Forms.TableLayoutPanel();
@@ -51,6 +57,12 @@
             this.textBoxEpochs = new System.Windows.Forms.TextBox();
             this.textBoxHiddenNeurons = new System.Windows.Forms.TextBox();
             this.labelHiddenNeurons = new System.Windows.Forms.Label();
+            this.labelRowLimit = new System.Windows.Forms.Label();
+            this.textBoxRowLimit = new System.Windows.Forms.TextBox();
+            this.labelWeightDecay = new System.Windows.Forms.Label();
+            this.textBoxWeightDecay = new System.Windows.Forms.TextBox();
+            this.labelMomentum = new System.Windows.Forms.Label();
+            this.textBoxMomentum = new System.Windows.Forms.TextBox();
             this.gridOutputIntervals = new System.Windows.Forms.DataGridView();
             this.lowDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.highDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +75,7 @@
             this.tableLayoutPanelButtons = new System.Windows.Forms.TableLayoutPanel();
             this.buttonNextTraining = new System.Windows.Forms.Button();
             this.buttonStart = new System.Windows.Forms.Button();
+            this.buttonStop = new System.Windows.Forms.Button();
             this.textBoxTrainingOutput = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelPrediction = new System.Windows.Forms.TableLayoutPanel();
@@ -131,14 +144,38 @@
             // 
             this.columnsDataGrid.AutoGenerateColumns = false;
             this.columnsDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.columnsDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.columnsDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.columnsDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
             this.selectedDataGridViewCheckBoxColumn});
             this.columnsDataGrid.DataSource = this.columnsBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.columnsDataGrid.DefaultCellStyle = dataGridViewCellStyle2;
             this.columnsDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.columnsDataGrid.Location = new System.Drawing.Point(3, 3);
             this.columnsDataGrid.Name = "columnsDataGrid";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.columnsDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.columnsDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.columnsDataGrid.Size = new System.Drawing.Size(361, 356);
             this.columnsDataGrid.TabIndex = 0;
@@ -234,7 +271,7 @@
             this.tableLayoutPanelNetwork.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelNetwork.Name = "tableLayoutPanelNetwork";
             this.tableLayoutPanelNetwork.RowCount = 3;
-            this.tableLayoutPanelNetwork.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 108F));
+            this.tableLayoutPanelNetwork.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 176F));
             this.tableLayoutPanelNetwork.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelNetwork.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
             this.tableLayoutPanelNetwork.Size = new System.Drawing.Size(367, 398);
@@ -254,15 +291,24 @@
             this.tableLayoutPanelNeuralNetworkSettings.Controls.Add(this.textBoxEpochs, 1, 2);
             this.tableLayoutPanelNeuralNetworkSettings.Controls.Add(this.textBoxHiddenNeurons, 1, 3);
             this.tableLayoutPanelNeuralNetworkSettings.Controls.Add(this.labelHiddenNeurons, 0, 3);
+            this.tableLayoutPanelNeuralNetworkSettings.Controls.Add(this.labelRowLimit, 0, 4);
+            this.tableLayoutPanelNeuralNetworkSettings.Controls.Add(this.textBoxRowLimit, 1, 4);
+            this.tableLayoutPanelNeuralNetworkSettings.Controls.Add(this.labelWeightDecay, 0, 5);
+            this.tableLayoutPanelNeuralNetworkSettings.Controls.Add(this.textBoxWeightDecay, 1, 5);
+            this.tableLayoutPanelNeuralNetworkSettings.Controls.Add(this.labelMomentum, 0, 6);
+            this.tableLayoutPanelNeuralNetworkSettings.Controls.Add(this.textBoxMomentum, 1, 6);
             this.tableLayoutPanelNeuralNetworkSettings.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelNeuralNetworkSettings.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanelNeuralNetworkSettings.Name = "tableLayoutPanelNeuralNetworkSettings";
-            this.tableLayoutPanelNeuralNetworkSettings.RowCount = 4;
-            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00062F));
-            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00063F));
-            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.00063F));
-            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 24.99813F));
-            this.tableLayoutPanelNeuralNetworkSettings.Size = new System.Drawing.Size(361, 102);
+            this.tableLayoutPanelNeuralNetworkSettings.RowCount = 7;
+            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28566F));
+            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28566F));
+            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28566F));
+            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28424F));
+            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
+            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28531F));
+            this.tableLayoutPanelNeuralNetworkSettings.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28816F));
+            this.tableLayoutPanelNeuralNetworkSettings.Size = new System.Drawing.Size(361, 170);
             this.tableLayoutPanelNeuralNetworkSettings.TabIndex = 2;
             // 
             // labelLearningDataRatio
@@ -271,7 +317,7 @@
             this.labelLearningDataRatio.Dock = System.Windows.Forms.DockStyle.Fill;
             this.labelLearningDataRatio.Location = new System.Drawing.Point(3, 0);
             this.labelLearningDataRatio.Name = "labelLearningDataRatio";
-            this.labelLearningDataRatio.Size = new System.Drawing.Size(126, 25);
+            this.labelLearningDataRatio.Size = new System.Drawing.Size(126, 24);
             this.labelLearningDataRatio.TabIndex = 0;
             this.labelLearningDataRatio.Text = "Learning data ratio";
             this.labelLearningDataRatio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -280,9 +326,9 @@
             // 
             this.labelLearningRate.AutoSize = true;
             this.labelLearningRate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelLearningRate.Location = new System.Drawing.Point(3, 25);
+            this.labelLearningRate.Location = new System.Drawing.Point(3, 24);
             this.labelLearningRate.Name = "labelLearningRate";
-            this.labelLearningRate.Size = new System.Drawing.Size(126, 25);
+            this.labelLearningRate.Size = new System.Drawing.Size(126, 24);
             this.labelLearningRate.TabIndex = 1;
             this.labelLearningRate.Text = "Learning rate";
             this.labelLearningRate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -299,26 +345,26 @@
             // textBoxLearningRate
             // 
             this.textBoxLearningRate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxLearningRate.Location = new System.Drawing.Point(135, 28);
+            this.textBoxLearningRate.Location = new System.Drawing.Point(135, 27);
             this.textBoxLearningRate.Name = "textBoxLearningRate";
             this.textBoxLearningRate.Size = new System.Drawing.Size(86, 20);
             this.textBoxLearningRate.TabIndex = 3;
-            this.textBoxLearningRate.Text = "0,001";
+            this.textBoxLearningRate.Text = "0,5";
             // 
             // labelEpochs
             // 
             this.labelEpochs.AutoSize = true;
             this.labelEpochs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelEpochs.Location = new System.Drawing.Point(3, 50);
+            this.labelEpochs.Location = new System.Drawing.Point(3, 48);
             this.labelEpochs.Name = "labelEpochs";
-            this.labelEpochs.Size = new System.Drawing.Size(126, 25);
+            this.labelEpochs.Size = new System.Drawing.Size(126, 24);
             this.labelEpochs.TabIndex = 4;
             this.labelEpochs.Text = "Epochs";
             this.labelEpochs.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // textBoxEpochs
             // 
-            this.textBoxEpochs.Location = new System.Drawing.Point(135, 53);
+            this.textBoxEpochs.Location = new System.Drawing.Point(135, 51);
             this.textBoxEpochs.Name = "textBoxEpochs";
             this.textBoxEpochs.Size = new System.Drawing.Size(86, 20);
             this.textBoxEpochs.TabIndex = 5;
@@ -327,7 +373,7 @@
             // textBoxHiddenNeurons
             // 
             this.textBoxHiddenNeurons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxHiddenNeurons.Location = new System.Drawing.Point(135, 78);
+            this.textBoxHiddenNeurons.Location = new System.Drawing.Point(135, 75);
             this.textBoxHiddenNeurons.Name = "textBoxHiddenNeurons";
             this.textBoxHiddenNeurons.Size = new System.Drawing.Size(86, 20);
             this.textBoxHiddenNeurons.TabIndex = 6;
@@ -337,25 +383,107 @@
             // 
             this.labelHiddenNeurons.AutoSize = true;
             this.labelHiddenNeurons.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.labelHiddenNeurons.Location = new System.Drawing.Point(3, 75);
+            this.labelHiddenNeurons.Location = new System.Drawing.Point(3, 72);
             this.labelHiddenNeurons.Name = "labelHiddenNeurons";
-            this.labelHiddenNeurons.Size = new System.Drawing.Size(126, 27);
+            this.labelHiddenNeurons.Size = new System.Drawing.Size(126, 24);
             this.labelHiddenNeurons.TabIndex = 7;
             this.labelHiddenNeurons.Text = "Hidden neurons";
             this.labelHiddenNeurons.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labelRowLimit
+            // 
+            this.labelRowLimit.AutoSize = true;
+            this.labelRowLimit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelRowLimit.Location = new System.Drawing.Point(3, 96);
+            this.labelRowLimit.Name = "labelRowLimit";
+            this.labelRowLimit.Size = new System.Drawing.Size(126, 24);
+            this.labelRowLimit.TabIndex = 8;
+            this.labelRowLimit.Text = "Row limit";
+            this.labelRowLimit.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxRowLimit
+            // 
+            this.textBoxRowLimit.Location = new System.Drawing.Point(135, 99);
+            this.textBoxRowLimit.Name = "textBoxRowLimit";
+            this.textBoxRowLimit.Size = new System.Drawing.Size(86, 20);
+            this.textBoxRowLimit.TabIndex = 9;
+            // 
+            // labelWeightDecay
+            // 
+            this.labelWeightDecay.AutoSize = true;
+            this.labelWeightDecay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelWeightDecay.Location = new System.Drawing.Point(3, 120);
+            this.labelWeightDecay.Name = "labelWeightDecay";
+            this.labelWeightDecay.Size = new System.Drawing.Size(126, 24);
+            this.labelWeightDecay.TabIndex = 10;
+            this.labelWeightDecay.Text = "Weight decay";
+            this.labelWeightDecay.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxWeightDecay
+            // 
+            this.textBoxWeightDecay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxWeightDecay.Location = new System.Drawing.Point(135, 123);
+            this.textBoxWeightDecay.Name = "textBoxWeightDecay";
+            this.textBoxWeightDecay.Size = new System.Drawing.Size(86, 20);
+            this.textBoxWeightDecay.TabIndex = 11;
+            this.textBoxWeightDecay.Text = "0,001";
+            // 
+            // labelMomentum
+            // 
+            this.labelMomentum.AutoSize = true;
+            this.labelMomentum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelMomentum.Location = new System.Drawing.Point(3, 144);
+            this.labelMomentum.Name = "labelMomentum";
+            this.labelMomentum.Size = new System.Drawing.Size(126, 26);
+            this.labelMomentum.TabIndex = 12;
+            this.labelMomentum.Text = "Momentum";
+            this.labelMomentum.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // textBoxMomentum
+            // 
+            this.textBoxMomentum.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxMomentum.Location = new System.Drawing.Point(135, 147);
+            this.textBoxMomentum.Name = "textBoxMomentum";
+            this.textBoxMomentum.Size = new System.Drawing.Size(86, 20);
+            this.textBoxMomentum.TabIndex = 13;
+            this.textBoxMomentum.Text = "0,001";
+            // 
             // gridOutputIntervals
             // 
             this.gridOutputIntervals.AutoGenerateColumns = false;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridOutputIntervals.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.gridOutputIntervals.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridOutputIntervals.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.lowDataGridViewTextBoxColumn,
             this.highDataGridViewTextBoxColumn});
             this.gridOutputIntervals.DataSource = this.outputIntervalsBindingSource;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridOutputIntervals.DefaultCellStyle = dataGridViewCellStyle5;
             this.gridOutputIntervals.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridOutputIntervals.Location = new System.Drawing.Point(3, 111);
+            this.gridOutputIntervals.Location = new System.Drawing.Point(3, 179);
             this.gridOutputIntervals.Name = "gridOutputIntervals";
-            this.gridOutputIntervals.Size = new System.Drawing.Size(361, 248);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.gridOutputIntervals.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            this.gridOutputIntervals.Size = new System.Drawing.Size(361, 180);
             this.gridOutputIntervals.TabIndex = 3;
             this.gridOutputIntervals.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.OnOutputIntervalsBindingError);
             // 
@@ -440,11 +568,13 @@
             // 
             // tableLayoutPanelButtons
             // 
-            this.tableLayoutPanelButtons.ColumnCount = 2;
+            this.tableLayoutPanelButtons.ColumnCount = 3;
+            this.tableLayoutPanelButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 198F));
             this.tableLayoutPanelButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanelButtons.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 81F));
-            this.tableLayoutPanelButtons.Controls.Add(this.buttonNextTraining, 0, 0);
+            this.tableLayoutPanelButtons.Controls.Add(this.buttonNextTraining, 2, 0);
             this.tableLayoutPanelButtons.Controls.Add(this.buttonStart, 0, 0);
+            this.tableLayoutPanelButtons.Controls.Add(this.buttonStop, 1, 0);
             this.tableLayoutPanelButtons.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanelButtons.Location = new System.Drawing.Point(3, 365);
             this.tableLayoutPanelButtons.Name = "tableLayoutPanelButtons";
@@ -459,21 +589,31 @@
             this.buttonNextTraining.Location = new System.Drawing.Point(283, 3);
             this.buttonNextTraining.Name = "buttonNextTraining";
             this.buttonNextTraining.Size = new System.Drawing.Size(75, 24);
-            this.buttonNextTraining.TabIndex = 3;
+            this.buttonNextTraining.TabIndex = 6;
             this.buttonNextTraining.Text = "Next";
             this.buttonNextTraining.UseVisualStyleBackColor = true;
-            this.buttonNextTraining.Click += new System.EventHandler(this.OnClickNext);
             // 
             // buttonStart
             // 
             this.buttonStart.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonStart.Location = new System.Drawing.Point(202, 3);
+            this.buttonStart.Location = new System.Drawing.Point(120, 3);
             this.buttonStart.Name = "buttonStart";
             this.buttonStart.Size = new System.Drawing.Size(75, 24);
-            this.buttonStart.TabIndex = 2;
+            this.buttonStart.TabIndex = 4;
             this.buttonStart.Text = "Start";
             this.buttonStart.UseVisualStyleBackColor = true;
             this.buttonStart.Click += new System.EventHandler(this.OnClickStart);
+            // 
+            // buttonStop
+            // 
+            this.buttonStop.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonStop.Location = new System.Drawing.Point(201, 3);
+            this.buttonStop.Name = "buttonStop";
+            this.buttonStop.Size = new System.Drawing.Size(76, 24);
+            this.buttonStop.TabIndex = 5;
+            this.buttonStop.Text = "Stop";
+            this.buttonStop.UseVisualStyleBackColor = true;
+            this.buttonStop.Click += new System.EventHandler(this.OnClickStop);
             // 
             // textBoxTrainingOutput
             // 
@@ -593,8 +733,6 @@
         private System.Windows.Forms.TabPage tabPageTraining;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelTraining;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelButtons;
-        private System.Windows.Forms.Button buttonNextTraining;
-        private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.TextBox textBoxTrainingOutput;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanelPrediction;
@@ -621,6 +759,15 @@
         private System.Windows.Forms.TextBox textBoxEpochs;
         private System.Windows.Forms.TextBox textBoxHiddenNeurons;
         private System.Windows.Forms.Label labelHiddenNeurons;
+        private System.Windows.Forms.Label labelRowLimit;
+        private System.Windows.Forms.TextBox textBoxRowLimit;
+        private System.Windows.Forms.Button buttonNextTraining;
+        private System.Windows.Forms.Button buttonStart;
+        private System.Windows.Forms.Button buttonStop;
+        private System.Windows.Forms.Label labelWeightDecay;
+        private System.Windows.Forms.TextBox textBoxWeightDecay;
+        private System.Windows.Forms.Label labelMomentum;
+        private System.Windows.Forms.TextBox textBoxMomentum;
     }
 }
 

@@ -69,11 +69,11 @@ namespace BIAI.Network
             }
         }
 
-        public void UpdateWeights(double learningRate)
+        public void UpdateWeights(double learningRate, double weightDecay, double momentum)
         {
             foreach (var neuron in Neurons)
             {
-                neuron.UpdateWeigths(learningRate);
+                neuron.UpdateWeigths(learningRate, weightDecay, momentum);
             }
 
             // Bias has no activator therefore no need to call update weigths function

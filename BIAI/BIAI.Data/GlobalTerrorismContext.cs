@@ -16,6 +16,7 @@ namespace BIAI.Data
         public GlobalTerrorismContext() : base("GlobalTerrorism")
         {
             Database.Log = Console.Write;
+            Database.CommandTimeout = 600;
         }
     }
 }
